@@ -1,0 +1,232 @@
+<view class="home">
+  <!-- 信用分不足 -->
+  <view class='credit-lack'>
+    <view class='header'>
+      <image class='h-bg' src='../../images/home-bg.png'></image>
+      <view class='header-top'>
+        <view class='title-h1 weight'>您的信用分不足, 无法查看此列表</view>
+        <view class='title-h2'>可以查看担保您的店铺调货清单或提高您的信用分</view>
+      </view>
+      <view class='header-content'>
+        <image class='m-bg' src='../../images/home-user-bg.png'></image>
+        <view class='main'>
+          <view class='portrait'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='Id'>
+            <image src='../../images/ID-icon.png'></image>
+            <view class='Id-right'>
+              <view class='weight'>123456789</view>
+              <view class='text'>您的ID</view>
+            </view>
+          </view>
+          <view class='credit-num'>
+            <image src='../../images/jf.png'></image>
+            <view class='credit-num-right'>
+              <view class='weight'>0分</view>
+              <view class='text'>目前信用分</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 规则 -->
+    <view class='credit-Rules'>
+        <view class='rules-title'>信用分规则</view>
+        <view class='card'>
+          <view class='cardTitle'>
+            <text class='h1'>一、 担保增加信用分</text>
+            <view class='move first-move' bindtap='gotoMyGuarantee'>
+              <text class='move-text'>求担保</text>
+              <image class='r-move-b' src='../../images/r-move-b.png'></image>
+              <image class='move-bg' src='../../images/move-bg.png'></image>
+            </view>
+          </view>
+          <view class='cardTitle-info'>
+              <text>已入驻店铺, 在其我的页面有“我的担保”, 点击进去输入您的ID即可为您进行担保交易。 满足10分即可成为会员。</text>
+          </view>
+          <view class='cardContent'>
+            <view class='firstCard'>
+              <view class='table'>
+                <view class='t-header'>
+                  <view class='th'>
+                    <view class='td'>店铺等级</view>
+                    <view class='td'>对应分数</view>
+                  </view>
+                </view>
+                <view class='t-body'>
+                  <view class='tr' wx:for="{{store_grade}}" wx:key="key" wx:for-index="key" wx:for-item ="value">
+                    <view class='td'>{{key}}</view>
+                    <view class='td'>{{value}}</view>
+                  </view>
+                  <!-- <view class='tr'>
+                    <view class='td'>3~5钻店铺</view>
+                    <view class='td'>2 分</view>
+                  </view>
+
+                  <view class='tr'>
+                    <view class='td'>1~2皇冠店铺</view>
+                    <view class='td'>3 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>3~5皇冠店铺</view>
+                    <view class='td'>5 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>5冠店铺</view>
+                    <view class='td'>7 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>1金冠及以上</view>
+                    <view class='td'>10 分</view>
+                  </view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- twocard -->
+        <view class='card'>
+          <view class='cardTitle'>
+            <text class='h1'>二、 其他增加信用分</text>
+            <view class='move two-move' bindtap='gotoMySecurityDeposit'>
+              <text class='move-text'>保证金缴纳</text>
+              <image class='r-move-b' src='../../images/r-move-b.png'></image>
+              <image class='move-bg' src='../../images/move-bg.png'></image>
+            </view>
+          </view>
+          <view class='cardContent'>
+            <view class='twoCard'>
+              <view class='table'>
+                <view class='t-header'>
+                  <view class='th'>
+                    <view class='td'>增加方式</view>
+                    <view class='td'>对应分数</view>
+                  </view>
+                </view>
+                <view class='t-body'>
+                  <view class='tr' wx:for="{{caution_money}}" wx:key="key" wx:for-index="key" wx:for-item ="value">
+                    <view class='td'>{{key}}</view>
+                    <view class='td'>{{value}}</view>
+                  </view>
+                  <!-- <view class='tr'>
+                    <view class='td'>保证金</view>
+                    <view class='td'>￥5000 = 1 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>钱包余额</view>
+                    <view class='td'>￥10000 = 1 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>累计交易</view>
+                    <view class='td'>￥50000 = 1 分</view>
+                  </view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- threeCard -->
+        <view class='card'>
+          <view class='cardTitle'>
+            <text class='h1'>三、 承诺服务增加信用分</text>
+            <view class='move three-move' bindtap='gotoMyService'>
+              <text class='move-text'>承诺服务</text>
+              <image class='r-move-b' src='../../images/r-move-b.png'></image>
+              <image class='move-bg' src='../../images/move-bg.png'></image>
+            </view>
+          </view>
+          <view class='cardContent'>
+            <view class='threeCard'>
+              <view class='table'>
+                <view class='t-header'>
+                  <view class='th'>
+                    <view class='td'>承诺内容</view>
+                    <view class='td'>对应分数</view>
+                  </view>
+                </view>
+                <view class='t-body'>
+                  <view class='tr' wx:for="{{service}}" wx:key="key" wx:for-index="key" wx:for-item ="value">
+                    <view class='td'>{{key}}</view>
+                    <view class='td'>{{value}}</view>
+                  </view>
+                  <!-- <view class='tr'>
+                    <view class='td'>瑕疵退换</view>
+                    <view class='td'>1 分</view>
+                  </view>
+                  <view class='tr'>
+                    <view class='td'>假一赔三</view>
+                    <view class='td'>3 分</view>
+                  </view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='footer'></view>
+    </view>
+  </view>
+  <!-- 信用分充足 -->
+  <view class='credit-ample' wx:if="{{true}}">
+    <view class='credit-ample-top'>
+      <!-- 守则 -->
+      <view class='relus' bindtap='gotoRElus'>
+        <image class='bg' src='../../images/home/bg.png'></image>
+        <image class='text-img' src='../../images/home/text-img.png'></image>
+        <view class='text'>
+          <text>点击查看</text>
+          <image class='move-right' src='../../images/home/move-right.png'></image>
+        </view>
+      </view>
+      <!-- 搜索 -->
+      <view class='search'>
+        <view class='search-content' bindtap='gotoSearch'>
+          <image class='search-icon' src='../../images/home/search.png'></image>
+          <text>请输入货号或者名称搜索</text>
+        </view>
+      </view>
+    </view>
+    <view class='goods-list clearfix'>
+      <view class='listItem' bindtap='gotoGoodsInfo'>
+        <view class='imgBox'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
+          <view class='info-bottom'>
+            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
+            <view class='people-num noWeight'>2091人求货</view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='listItem'>
+        <view class='imgBox'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
+          <view class='info-bottom'>
+            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
+            <view class='people-num noWeight'>2091人求货</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='listItem'>
+        <view class='imgBox'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
+          <view class='info-bottom'>
+            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
+            <view class='people-num noWeight'>2091人求货</view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>

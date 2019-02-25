@@ -1,0 +1,174 @@
+<!-- 订单详情页 -->
+<view class="orderInfo">
+<!-- 商品详情 -->
+  <view class='goodsDetails'>
+    <view class='goodsDetails-top clearfix'>
+      <view class='goodsImg'>
+        <image src='../../images/123.png'></image>
+      </view>
+      <view class='goodsDetails-right'>
+        <view class='title'>
+          <view class='h1 weight'>LIHJLFJfkjjjjjjdfjjjjjjjjjjjjjjjjjjjjjjjjjGLJKFGLK;GKF;LLgfkjhkhFFKL</view>
+        </view>
+        <view class='right-bottom'>
+          <view>尺寸: 42.5</view>
+          <view class='price'><text style='font-size: 18rpx;'>￥</text><text class='weight'>2389</text></view>
+        </view>
+      </view>
+    </view> 
+    <view class='address'>
+      <view class='address-title'>
+        <text>收货地址</text>
+        <image class='drop_down' src='../../images/drop_down1.png'></image>
+      </view>
+      <view class='addressInfo'>
+        <text class='weight'>天津市西青区宾水西道精武镇 天津工业大学</text>
+        <text class='copy'>复制</text>
+      </view>
+    </view>
+  </view>
+<!-- 供货商信息 -->
+  <view class='supplierInfo clearfix'>
+    <view class='supplierInfo-left fl'>
+      <view class='userPortrait'>
+        <image src='../../images/123.png'></image>
+        <image class='icon' src="../../images/Identity.png"></image>
+      </view>
+      <view class='userInfo'>
+        <view class='userName weight'>张晓明</view>
+        <view class='userId'>
+          <image src="../../images/ID.png"></image>
+          <text class='Id'>123456789</text>
+        </view>
+      </view>
+    </view>
+    <view class='supplierInfo-right fl'>
+      <view class='box'>
+        <image src='../../images/user.png'></image>
+        <text class='text' bindtap='gotomyHome'>查看主页</text>
+      </view>
+      <view class='box'>
+        <image src='../../images/phone.png'></image>
+        <text class='text'>电话联系</text>
+      </view>
+    </view>
+  </view>
+  <!-- 须知 -->
+  <view class='notice'>
+    <view class='card'>
+      <view class='cardTitle'>
+        <text class='h1'>供货商须知</text>
+      </view>
+      <view class='cardContent'>
+        <view class='firstCard'>
+          <view class='list'>
+              <text>1.发货请使用无任何店铺信息的包装</text>
+              <text>2.请做好防调包扣, 以便信息确认</text>
+              <text>3.请于确认调货后12小时内进行发货</text>
+              <text>4.物流单号24小时内产生可查询的物流信息</text>
+          </view>
+          <!-- 违约责任 -->
+          <view class='firstCardFooter'>
+            <view class='WY-title'>违约责任</view>
+            <view class='WY-text'>
+              <text>未满足以上4条, 押金扣除赔付于商家。 调货单视情况进行取消</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='card'>
+      <view class='cardTitle'>
+        <text class='h1'>求货商须知</text>
+      </view>
+      <view class='cardContent'>
+        <view class='twoCard'>
+          <view class='list-dl'>
+            <view class='dt'>1. 供货商将在订单确认12个小时内为您发货</view>
+            <view class='dd'>(1) 若12小时未发货, 将赔偿您押金</view>
+            <view class='dd'>(2) 若24小时未发货, 该订单重新进入求货状态</view>
+            <view class='dt'>2. 若您想取消求货</view>
+            <view class='dd'>(1) 未有供货商确认的的情况, 无责任取消</view>
+            <view class='dd'>(2) 已有供货商确认12小时内, 取消将需要赔付至供货方订单金额4%的相应违约金</view>
+            <view class='dd'>(3) 供货商超过12小时未发货, 您可以获得相应赔偿, 并且可以无责任取消</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class='order'>
+    <view class='order-title'>
+      <image class='left-line' src='../../images/left-line.png'></image>
+      <view class='h1 weight'>订单信息</view>
+    </view>
+    <view class='order-content'>
+      <view class='items'>订单编号：2755555555555555555555555 <text class='copy'>复制</text></view>
+      <view class='items'>订单确认时间：</view>
+      <view class='items'>物流公司：</view>
+      <view class='items'>物流单号：<text class='copy'>复制</text></view>
+      <view class='items'>发货时间：</view>
+    </view>
+    <view class='order-footer'>
+      <view class='imgBox'>
+        <image src='../../images/123.png'></image>
+        <view class='bottomText'>物流底单</view>
+      </view>
+      <view class='imgBox'>
+        <image src='../../images/123.png'></image>
+        <view class='bottomText'>防掉包扣</view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品信息  -->
+  <view class='goodsInfo'>
+    <view class='goodsInfo-title'>
+      <image class='left-line' src='../../images/left-line.png'></image>
+      <view class='h1 weight'>订单信息</view>
+    </view>
+    <view class="goodsInfo-content">
+      <view class='items'>
+        <text>商品出售价格</text>
+        <text>￥2000</text>
+      </view>
+      <view class='items'>
+        <text>商品求货价格</text>
+        <text>￥1800</text>
+      </view>
+      <view class='items'>
+        <text>服务费（0.5%）</text>
+        <text>￥9</text>
+      </view>
+    </view>
+    <view class='goodsInfo-footer'>
+      <view class='weight'>此单实际利润</view>
+      <view class='color1'>￥1909</view>
+    </view>
+  </view>
+  <!-- 商品信息  -->
+  <view class='incomeInfo'>
+    <view class='incomeInfo-title'>
+      <image class='left-line' src='../../images/left-line.png'></image>
+      <view class='h1 weight'>收入详情</view>
+    </view>
+    <view class="incomeInfo-content">
+      <view class='items'>
+        <text>商品求货价格</text>
+        <text>￥1800</text>
+      </view>
+      <view class='items'>
+        <text>需支付保证金</text>
+        <text>￥72</text>
+      </view>
+      <view class='items'>
+        <text>银行转账费（0.5%）</text>
+        <text>-￥9</text>
+      </view>
+    </view>
+    <view class='incomeInfo-footer'>
+      <view class='weight'>此单实际利润</view>
+      <view class='color1'>￥1791</view>
+    </view>
+  </view>
+</view>

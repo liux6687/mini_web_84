@@ -1,0 +1,84 @@
+.content {
+  padding: 24rpx;
+}
+.header {
+  background: #fff;
+  padding: 16rpx 34rpx; 
+}
+.header .search {
+  height: 70rpx;
+  background: #f2f2f2;
+  border-radius: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .search image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+}
+.goods {
+  background: #fff;
+  padding: 0 24rpx;
+  border-radius: 10rpx;
+  margin-bottom: 18rpx;
+}
+.goods .top {
+  height: 96rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods .top .goods-Id {
+  display: flex;
+}
+.goods .top .status {
+  color: #ef6f3e;
+}
+.goods .main {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.goods .main .goods-img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 35rpx;
+}
+.goods .main .title {
+  font-weight: bold;
+  line-height: 38rpx;
+  margin-bottom: 35rpx;
+}
+.goods .main .goods-info {
+  display: flex;
+  justify-content: space-between;
+}
+.goods .main .goods-info .info {
+  color: #84878d;
+}
+.goods .main .goods-info .info .color{
+  margin-right: 20rpx;
+}
+.goods .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+}
+.goods .bottom .time {
+  font-weight: bold;
+}
+.goods .bottom .btn-box {
+  display: flex;
+}
+.goods .bottom .btn-box view {
+  padding: 15rpx 25rpx;
+  border: 2rpx solid #2c2c2c;
+  border-radius: 60rpx;
+  margin-left: 24rpx;
+  font-weight: bold;
+}

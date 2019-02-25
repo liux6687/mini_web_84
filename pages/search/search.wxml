@@ -1,0 +1,21 @@
+<view class="search">
+  <view class='header'>
+    <image src='../../images/home/search.png'></image>
+    <view class='search'>
+      <input placeholder='输入单号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
+      <image wx:if="{{value != ''}}" src='../../images/close.png' bindtap='close'></image>
+    </view>
+    <view class='submit' bindtap='submit'>搜索</view>
+  </view>
+  <view class='content'>
+    <view class='top'>
+      <view class='h1'>历史搜索</view>
+      <image class='remove' src='../../images/remove.png' bindtap='empty'></image>
+    </view>
+    <view class='list clearfix'>
+      <view class='li'>adidas</view>
+      <view class='li'>fdgdfgfdg gfdgdfgdfd</view>
+      <view class='li'>sdfdsfdsfds</view>
+    </view>
+  </view>
+</view>

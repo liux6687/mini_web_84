@@ -1,0 +1,48 @@
+<!-- 交易守则页 -->
+<view class="relus">
+  <view class='topImgbox'>
+    <image src='../../images/rules.png'></image>
+  </view>
+
+  <view class='card'>
+    <view class='cardTitle'>
+      <text class='h1'>供货商须知</text>
+    </view>
+    <view class='cardContent'>
+      <view class='firstCard'>
+        <view class='list'>
+            <text>1.发货请使用无任何店铺信息的包装</text>
+            <text>2.请做好防调包扣, 以便信息确认</text>
+            <text>3.请于确认调货后12小时内进行发货</text>
+            <text>4.物流单号24小时内产生可查询的物流信息</text>
+        </view>
+        <!-- 违约责任 -->
+        <view class='firstCardFooter'>
+          <view class='WY-title'>违约责任</view>
+          <view class='WY-text'>
+            <text>未满足以上4条, 押金扣除赔付于商家。 调货单视情况进行取消</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='cardTitle'>
+      <text class='h1'>求货商须知</text>
+    </view>
+    <view class='cardContent'>
+      <view class='twoCard'>
+        <view class='list-dl'>
+          <view class='dt'>1. 供货商将在订单确认12个小时内为您发货</view>
+          <view class='dd'>(1) 若12小时未发货, 将赔偿您押金</view>
+          <view class='dd'>(2) 若24小时未发货, 该订单重新进入求货状态</view>
+          <view class='dt'>2. 若您想取消求货</view>
+          <view class='dd'>(1) 未有供货商确认的的情况, 无责任取消</view>
+          <view class='dd'>(2) 已有供货商确认12小时内, 取消将需要赔付至供货方订单金额4%的相应违约金</view>
+          <view class='dd'>(3) 供货商超过12小时未发货, 您可以获得相应赔偿, 并且可以无责任取消</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

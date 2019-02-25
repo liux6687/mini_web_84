@@ -1,0 +1,61 @@
+<!-- 我的钱包页面 -->
+<view class='myWallet'>
+  <view class='header'>
+    <view class='header-bg'>
+      <image src='../../images/me/wallet-bg.png'></image>
+    </view>
+    <view class='header-content'>
+      <view class='title'>钱包余额(元)</view>
+      <view class='num'>5000</view>
+      <view class='ellipse'>
+        <image src='../../images/me/mySecurityDeposit/ellipse.png'></image>
+      </view>
+      <!-- 支付宝 -->
+      <view class='alipay'>
+        <view>支付宝</view>
+        <view class='user'>1563025655</view>
+        <view class='icon-box' bindtap='gotoSet'>
+          <image src='../../images/me/edit.png'></image>
+        </view>
+      </view>
+      <!-- 提现 -->
+      <view class='withdrawals'>
+        <view class='submit' bindtap='submit'>提现</view>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='items'>
+      <view class='items-content NOline'>
+        <view class='left'>
+          <view class='h1'>
+            <text>疯狂过后客户</text>
+          </view>
+          <text class='time'>2019-02-19 12：36:20</text>
+        </view>
+        <view class='right'>
+          <view class='h1'>
+            <text>调货成功</text>
+          </view>
+          <text class='money'>-1800</text>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-content'>
+        <view class='left'>
+          <view class='h1'>
+            <text>疯狂过后客户</text>
+          </view>
+          <text class='time'>2019-02-19 12：36:20</text>
+        </view>
+        <view class='right'>
+          <view class='h1'>
+            <text>调货成功</text>
+          </view>
+          <text class='money'>-1800</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

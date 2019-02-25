@@ -1,0 +1,47 @@
+<!-- 开始调货 -->
+<view class='startTransfer'>
+  <view class='header'>
+    <view class='items'>
+      <text>当前出售价格</text>
+      <text class='weight'>￥2500</text>
+    </view>
+    <view class='items' bindtap='modelShow'>
+      <text>设置调货价格</text>
+      <text class='weight'>点击输入</text>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='items'>
+      <text>服务费（0.5%）</text>
+      <text class='weight'>-￥12.5</text>
+    </view>
+    <view class='items'>
+      <text class='weight'>您的利润</text>
+      <text class='weight Profit'>￥87.5</text>
+    </view>
+    <view class='line'>
+      <image src='../../images/me/myTransferList/line.png'></image>
+    </view>
+  </view>
+  <view class='button-box'>
+    <view class='submit'><text>开始调货</text></view>
+  </view>
+  <!-- model -->
+  <view class='model'>
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>调货价格</text>
+      </view>
+      <view class='model-content'>
+        <view class='input-box'>
+          <text class='text'>￥</text>
+          <input type='number' placeholder='请输入...'></input>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no'>取消</view>
+        <view class='yes'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

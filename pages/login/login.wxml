@@ -1,0 +1,54 @@
+<!-- login页面 -->
+<view class="login">
+  <view class='top'>
+    <view class='logo'>
+      <image src='../../images/84logo.png'></image>
+    </view>
+    <view class='text'>
+      <view class='h1'>此应用为内部交易平台（不对外开放）</view>
+      <view class='h2'>若您想开通权限, 请按以下步骤操作</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='phone'>
+      <view>1. 手机号验证</view>
+        <view class='move' bindtap='verifyPhone'>
+        立即验证 
+        <image class='icon' src='../../images/r-move.png'></image>
+        <!-- <image class='icon-yes' src='../../images/yes.png'></image> -->
+      </view>
+    </view>
+    <view class='name'>
+      <view>2. 实名认证</view>
+      <view class='move' bindtap='verifyName'>
+        立即验证 
+        <image class='icon' src='../../images/r-move.png'></image>
+        <!-- <image class='icon-yes' src='../../images/yes.png'></image> -->
+      </view>
+    </view>
+  </view>
+
+
+  <view class='phoneBox' wx:if="{{phoneModal}}">
+    <view class='content'>
+        <view class='title'>授权手机号码</view>
+        <view class='text'>
+            为了提供更优质的服务，我们需要您的授权获取您在微信中绑定的手机号码
+        </view>
+        <button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" class='getPhoneNumber'>同意授权</button>
+        <button class='phoneOther' bindtap='phoneOther'>取消</button>
+    </view>
+  </view>
+
+
+  <view class='phoneBox' wx:if="{{nameModal}}">
+    <view class='content'>
+        <view class='title'>授权手机号码</view>
+        <view class='text'>
+            为了提供更优质的服务，我们需要您的授权获取您在微信中实名认证
+        </view>
+        <button open-type='getRealnameAuthInfo' bindgetrealnameauthinfo="authinfo" class='getPhoneNumber'>同意授权</button>
+        <button class='nameOther' bindtap='nameOther'>取消</button>
+    </view>
+  </view>
+</view>

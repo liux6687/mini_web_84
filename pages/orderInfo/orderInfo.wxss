@@ -1,0 +1,240 @@
+.orderInfo {
+
+}
+.orderInfo .goodsDetails,.orderInfo .supplierInfo {
+  padding: 24rpx;
+  background: #fff;
+  margin-bottom: 18rpx;
+}
+.orderInfo .goodsDetails .goodsImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 30rpx;
+  float: left;
+}
+.orderInfo .goodsDetails .goodsDetails-right {
+  float: left;
+  width: 512rpx;
+}
+.orderInfo .goodsDetails .goodsDetails-right .h1 {
+  /* white-space: pre-wrap; */
+  word-break:break-all;
+  line-height: 38rpx;
+  margin-bottom: 40rpx;
+}
+
+.orderInfo .goodsDetails .goodsDetails-right .right-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.orderInfo .goodsDetails .goodsDetails-right .right-bottom .price {
+  color: #f18156;
+}
+
+/* 收货地址 */
+.orderInfo .goodsDetails .address {
+  border-top: 1rpx solid #f5f4f9;
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  line-height: 24rpx;
+}
+.orderInfo .goodsDetails .address .address-title {
+  display: flex;
+  align-items: center;
+  color: #ef6f3e;
+}
+.orderInfo .goodsDetails .address .drop_down {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+ .addressInfo {
+   margin-top: 30rpx;
+   display: flex;
+   justify-content: space-between;
+ }
+ /* 供货商信息 */
+.orderInfo .supplierInfo {
+  height: 94rpx;
+}
+.supplierInfo-left,supplierInfo-right {
+  width: 50%;
+  box-sizing: border-box;
+}
+.supplierInfo-left {
+  border-right: 2rpx solid #f5f4f9; 
+  display: flex;
+}
+.userPortrait {
+  position: relative;
+}
+.userPortrait image:first-child {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  overflow: hidden;
+}
+.userPortrait .icon {
+  position: absolute;
+  width: 50rpx;
+  height: 25rpx;
+  top: 75rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.orderInfo .userInfo {
+  padding: 8rpx 0 0 35rpx;
+  position: relative;
+}
+.orderInfo .userInfo .userId image {
+  position: absolute;
+  top: 40rpx;
+  left: 38rpx;
+  width: 30rpx;
+  height: 30rpx;
+  padding-top: 20rpx;
+}
+.orderInfo .userInfo .userName {
+  padding-bottom: 30rpx;
+}
+.orderInfo .userInfo .userId .Id {
+  padding: 10rpx 10rpx 10rpx 40rpx;
+  background: #f5f5f5;
+  border-radius: 34rpx;
+}
+/* 供货商右半部分 */
+.supplierInfo-right {
+  display: flex;
+  height: 94rpx;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.supplierInfo-right .box {
+  position: relative;
+  padding-left: 30rpx;
+  flex: 1;
+}
+.supplierInfo-right .box:first-child {
+  margin-right: 20rpx;
+}
+.supplierInfo-right image {
+  width: 54rpx;
+  height: 54rpx;
+  position: absolute;
+  top: -11rpx;
+  left: 5rpx;
+}
+.supplierInfo-right .text {
+  font-size: 20rpx;
+  background: #ef6f3e;
+  color: #fff;
+  padding: 8rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  padding-left: 30rpx;
+}
+/* 须知 */
+.orderInfo .notice {
+  margin-bottom: 18rpx;
+}
+ .firstCard,twoCard {
+   line-height: 40rpx;
+ }
+ .twoCard .list-dl {
+  line-height: 40rpx;
+}
+.list text {
+  display: inline-block;
+}
+.firstCardFooter .WY-title {
+  color: #ef6f3e;
+  line-height:  40rpx;
+}
+.orderInfo .notice .card {
+  margin: 0;
+}
+
+/* 订单信息 */
+
+.order {
+  background: #fff;
+  padding: 0 24rpx;
+  margin-top: 18rpx;
+}
+.order-title {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+.left-line {
+  width: 4rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.order-content {
+  line-height: 48rpx;
+  margin-bottom: 24rpx;
+}
+
+.order-footer {
+  border-top: 2rpx solid #f5f4f9;
+  display: flex;
+  padding: 24rpx;
+}
+
+.order-footer .imgBox {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.order-footer .imgBox .bottomText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  z-index: 100;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,.6)
+}
+
+/* 商品信息 */
+.goodsInfo,.incomeInfo {
+  padding: 24rpx 24rpx 0;
+  background: #fff;
+  margin-bottom: 18rpx;
+}
+.goodsInfo-title,.incomeInfo-title {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+.goodsInfo-content,.incomeInfo-content {
+  line-height: 40rpx;
+  margin-bottom: 24rpx;
+}
+.goodsInfo-content .items,.incomeInfo-content .items {
+  display: flex;
+  justify-content: space-between;
+}
+.goodsInfo-footer,.incomeInfo-footer {
+  border-top: 2rpx solid #f5f4f9;
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+
+
+
+
+/* 收入详情 */

@@ -1,0 +1,108 @@
+              <view class="pages">
+  <view class='header'>
+    <view class='header-content'>
+      <view class='title'>保证金(元)</view>
+      <view class='mySecurityDeposit'>5000</view>
+      <view class='ellipse'>
+        <image src='../../images/me/mySecurityDeposit/ellipse.png'></image>
+      </view>
+      <view class='freeze'>
+        <text class='freeze-num'>冻结￥2000</text>、
+        <view class='look-info'>
+          <text bindtap='gotoLooK'>查看详细</text>
+          <image src="../../images/me/mySecurityDeposit/move-r.png"></image>
+        </view>
+      </view>
+      <view class='btn-box'>
+        <view data-index='1' bindtap='showModel'>
+          <text>缴纳保证金</text>
+          <image src='../../images/me/mySecurityDeposit/icon-bzj.png'></image>
+        </view>
+        <view data-index='2' bindtap='showModel'>
+          <text>转出至余额</text>
+          <image src='../../images/me/mySecurityDeposit/icon-zc.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='bg'>
+      <image src='../../images/me/mySecurityDeposit/bg.png'></image>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='items'>
+      <view class='items-content NOline'>
+        <view class='left'>
+          <view class='h1'>
+            <text>疯狂过后客户</text>
+          </view>
+          <text class='time'>2019-02-19 12：36:20</text>
+        </view>
+        <view class='right'>
+          <view class='h1'>
+            <text>调货成功</text>
+          </view>
+          <text class='money'>-1800</text>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-content'>
+        <view class='left'>
+          <view class='h1'>
+            <text>缴纳保证金</text>
+          </view>
+          <text class='time'>2019-02-19 12：36:20</text>
+        </view>
+        <view class='right'>
+          <view class='h1'>
+            <text>调货成功</text>
+          </view>
+          <text class='money'>-1800</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+   <!-- 缴纳保证金model -->
+  <view class='model' wx:if="{{modelShow == 1}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>缴纳保证金</text>
+      </view>
+      <view class='model-content'>
+        <view class='input-box1'>
+          <text class='text'>￥</text>
+          <input type='number' placeholder='请输入金额数' ></input>
+          <text class='text'>00</text>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' bindtap='no'>取消</view>
+        <view class='yes' bindtap='yes'>确定</view>
+      </view>
+    </view>
+  </view>
+
+
+ <!-- 转出至余额model -->
+  <view class='model' wx:if="{{modelShow == 2}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>转出至余额</text>
+      </view>
+      <view class='model-content'>
+        <view class='input-box'>
+          <text class='text'>￥</text>
+          <input type='number' placeholder='请输入金额数' ></input>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' bindtap='no'>取消</view>
+        <view class='yes' bindtap='yes'>确定</view>
+      </view>
+    </view>
+  </view>
+
+

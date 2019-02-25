@@ -1,0 +1,149 @@
+.me {
+}
+.me .top {
+  padding: 30rpx 50rpx 45rpx 40rpx;
+  background: #3a3a3a;
+  color: #fff;
+}
+/* 用户信息 */
+.me .top .user {
+  display: flex;
+  align-items: center;
+}
+.me .top .user .userInfo {
+  display: flex;
+  margin-right: 220rpx;
+}
+.me .top .portrait {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  overflow: hidden;
+  margin-right: 25rpx;
+}
+.me .top .user .userInfo .userInfo-right .h1 {
+  padding: 10rpx 0 30rpx;
+  font-size: 28rpx;
+}
+.me .top .user .userInfo .userInfo-right .Id-text {
+  font-size: 18rpx;
+  padding: 10rpx 10rpx 10rpx 40rpx;
+  background: rgba(0,0,0,.2)
+}
+.me .top .user .userInfo .userInfo-right .Id {
+  position: relative;
+}
+.me .top .user .userInfo .userInfo-right .Id image {
+  position: absolute;
+  top: 5rpx;
+  left: 0rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.me .again-login {
+  flex: 0 0 148rpx;
+  position: relative;
+}
+.me .again-login view {
+  border: 2rpx solid #9d9d9d;
+  height: 46rpx;
+  box-sizing: border-box;
+  padding: 10rpx 16rpx 10rpx 45rpx;
+  border-radius: 46rpx;
+  font-size: 20rpx;
+}
+.me .again-login image {
+  position: absolute;
+  top: 14rpx;
+  left: 14rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+/* 店铺信息 */
+.me .shop {
+  padding-top: 30rpx;
+}
+.shopInfo {
+  display: flex;
+}
+.me .shop .shop-logo {
+  position: relative;
+}
+.me .shop .shop-logo image:first-child {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  overflow: hidden;
+  margin-right: 25rpx;
+}
+.me .shop .shop-logo image:last-child {
+  position: absolute;
+  top: 85rpx;
+  left: 26rpx;
+  width: 46rpx;
+  height: 26rpx;
+}
+.me .shop .shop-right .h1 {
+  padding: 10rpx 0 30rpx;
+  font-size: 28rpx;
+}
+.me .shop .shop-right .imgList {
+  display: flex;
+}
+.me .shop .shop-right .imgList image {
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 2rpx;
+}
+
+/* mys */
+.mys {
+  background: #fff;
+  display: flex;
+  padding: 32rpx 0;
+  justify-content: center;
+  margin-bottom: 18rpx;
+}
+.myService, .myTransferList, .myGuarantee {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 2rpx solid #e9e9e9;
+}
+.myService {
+  border: none;
+}
+.mys .num {
+  margin-bottom: 15rpx;
+  font-weight: bold;
+}
+
+/* 我的信用分 */ 
+.myCredit,.kefu,.mySecurityDeposit,.myWallet {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 44rpx 40rpx;
+  margin-bottom: 18rpx;
+}
+.myCredit .icon,.kefu .icon,.mySecurityDeposit .icon,.myWallet .icon {
+  width: 30rpx;
+  height: 25rpx;
+  margin-right: 25rpx;
+}
+.myCredit .right,.kefu .right,.mySecurityDeposit .right,.myWallet .right {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.mySecurityDeposit {
+  margin-bottom: 2rpx;
+}
+.kefu .move {
+  width: 10rpx;
+  height: 20rpx;
+}

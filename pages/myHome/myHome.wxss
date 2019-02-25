@@ -1,0 +1,255 @@
+.header {
+  height: 360rpx;
+  box-sizing: border-box;
+  background: #3a3a3a;
+  padding: 30rpx 40rpx;
+  position: relative;
+  margin-bottom: 95rpx;
+}
+.userInfo {
+  display: flex;
+  color: #fff;
+}
+.userInfo .portrait {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx; 
+  overflow: hidden;
+  border: 2rpx solid #fff; 
+  margin-right: 25rpx;
+}
+.userInfo-right {
+  padding-top: 10rpx;
+}
+.userInfo-right .text {
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+.userInfo-right .ID {
+  position: relative;
+}
+.userInfo-right .ID text {
+  padding: 10rpx;
+  padding-left: 40rpx;
+  border-radius: 40rpx;
+  background: rgba(0,0,0,.2)
+}
+.userInfo-right .ID image {
+  position: absolute;
+  border-radius: 30rpx;
+  top: -2rpx;
+  left: 8rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* header-card */
+.header-card {
+  position: absolute;
+  background: #fff;
+  width: 700rpx;
+  top: 173rpx;
+  left: 50%;
+  margin-left: -350rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 174rpx;
+  height: 79rpx;
+}
+/* share */
+.share {
+  position: absolute;
+  top: 28rpx;
+  right: 0;
+  width: 128rpx;
+  height: 50rpx;
+}
+.share .share-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128rpx;
+  height: 50rpx;
+}
+.share-mian {
+  position: absolute;
+  z-index: 2;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.share-mian text {
+  color: #fff;
+}
+.share-mian image {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 0 10rpx 0 24rpx;
+}
+/* card-content */ 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.num {
+  color: #ef6f3e;
+  padding: 30rpx 0 20rpx;
+}
+.num text {
+  font-size: 44rpx;
+  font-weight: bold;
+}
+.status {
+  color: #ef6f3e;
+  width: 130rpx;
+  text-align: center;
+  height: 35rpx;
+  line-height: 35rpx;
+  background: #fce2d8;
+  border-radius: 35rpx;
+}
+/* 卡片内容底部content-footer */
+.content-footer {
+  width: 100%;
+  padding: 40rpx 0 30rpx;
+  display: flex;
+  font-weight: bold;
+}
+.content-footer .h1 {
+  margin-bottom: 18rpx;
+}
+
+.content-footer .footer-right,.content-footer .footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-footer .footer-left {
+  border-right: 2rpx solid #f5f4f9;
+}
+.content-footer .footer-right .h1,.content-footer .footer-right .h2 {
+  flex: 1;
+  display: flex;
+}
+.content-footer .footer-right .h1 image{
+  width: 25rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.content-footer .footer-right .h2 text:first-child {
+  margin-right: 20rpx;
+}
+
+/* 内容mian */
+.mian {
+  position: fixed;
+  top: 450rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 0 30rpx; 
+}
+.mian .nav {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid  #f5f4f9;
+}
+.mian .nav .nav-item {
+  font-weight: bold;
+  margin-right: 50rpx;
+}
+.mian .nav .nav-item.active {
+  font-size: 30rpx;
+}
+
+
+/* 用户卡片 */
+.list-item {
+  position: relative;
+  float: left;
+  width: 335rpx;
+  height: 130rpx;
+  margin-right: 22rpx;
+  padding-top: 22rpx;
+}
+.list-item:nth-child(even) {
+  margin-right: 0rpx;
+}
+.list-item .userCard-bg {
+  position: absolute;
+  width: 335rpx;
+  height: 130rpx;
+}
+.userCard {
+  position: absolute;
+  display: flex;
+  height: 130rpx;
+  align-items: center;
+  z-index: 2;
+  padding-left: 25rpx;
+}
+.userCard .img-box {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 70rpx; 
+  overflow: hidden;
+  margin-right: 25rpx;
+}
+.userCard-right {
+  height: 70rpx;
+}
+.userCard .userCard-ID {
+  position: relative;
+}
+.userCard .h1 {
+  margin-bottom: 15rpx;
+}
+.userCard .userCard-ID text {
+  padding: 8rpx;
+  font-size: 18rpx;
+  padding-left: 40rpx;
+  border-radius: 40rpx;
+  background: rgba(0,0,0,.4)
+}
+.userCard .userCard-ID image {
+  position: absolute;
+  border-radius: 30rpx;
+  top: -2rpx;
+  left: 8rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+/* 评论项 */
+.comment-item {
+  padding-top: 55rpx;
+  display: flex;
+}
+.comment-item .img-box {
+  flex: 0 0 54rpx;
+  height: 54rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  border: 2rpx solid #fff;
+  margin-right: 20rpx;
+}
+.comment-item-right .h1 {
+  font-weight: bold;
+  padding: 8rpx 0 16rpx;
+}
+.comment-item-right .time {
+  color: #6f6f7d;
+  padding-bottom: 30rpx;
+} 
+.comment-item-right .comment-main {
+  line-height: 40rpx;
+  font-weight: bold;
+}

@@ -1,0 +1,43 @@
+.header {
+  background: #3a3a3a;
+  color: #fff;
+  padding: 80rpx 40rpx; 
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.header .logo {
+  flex: 0 0 68rpx;
+  height: 98rpx;
+  margin-right: 24rpx;
+}
+.header .h-text {
+  line-height: 34rpx;
+}
+.content {
+  padding-left: 30rpx;
+  background: #fff;
+}
+.content .items {
+  border-top: 2rpx solid #f5f4f9;
+}
+.content .items .main {
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+}
+.content .items .main .icon {
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 50rpx;
+}
+.content .items .main .m-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .items .main .m-right image {
+  width: 80rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}

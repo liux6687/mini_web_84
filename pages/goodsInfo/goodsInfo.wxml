@@ -1,0 +1,147 @@
+<!-- 商品详情页 -->
+<view class='goodsInfo'>
+ <view class='header'>
+  <view class='img-box'>
+    <image src='../../images/123.png'></image>
+  </view>
+  <view class='right'>
+    <view class='h1'>
+      <text>(DHFKHFKHKK KDHFKJHDKFJ) FGJKLGK JFGKJG KDJFKJF DJFKJFDK</text>
+    </view>
+    <view class='Id'>
+      <text>ID:123456789</text>
+    </view>
+  </view>
+ </view> 
+ <view class='select-box'>
+  <view class='select-items' wx:if="{{select1 == 0}}" data-index='1' bindtap="default">
+    <view class='text'>价格</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select1==0?"default":(select1== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+  <view class='select-items' wx:if="{{select1 == 1}}" data-index='1' bindtap="up">
+    <view class='text'>价格</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select1==0?"default":(select1== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+  <view class='select-items' wx:if="{{select1 == 2}}" data-index='1' bindtap="down">
+    <view class='text'>价格</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select1==0?"default":(select1== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+  <view class='select-items'wx:if="{{select2 == 0}}" data-index='2' bindtap="default">
+    <view class='text'>尺寸</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select2==0?"default":(select2== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+  <view class='select-items' wx:if="{{select2 == 1}}" data-index='2' bindtap="up">
+    <view class='text'>尺寸</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select2==0?"default":(select2== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+  <view class='select-items' wx:if="{{select2 == 2}}" data-index='2' bindtap="down">
+    <view class='text'>尺寸</view>
+    <view class='select-img'>
+      <image src='../../images/goodsInfo/{{select2==0?"default":(select2== 1?"up":"down")}}.png'></image>
+    </view>
+  </view>
+ </view>
+ <view class='goodsList clearfix'>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods' bindtap='gotoConfirmTransfer'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='items-bg'>
+        <image src='../../images/goodsInfo/size-bg.png'></image>
+      </view> 
+      <view class='items-content'>
+        <view class='items-size'>37</view>
+        <view class='items-price'>￥ 3009</view>
+        <view class='send-goods'>
+          <text>发货</text>
+          <image src='../../images/goodsInfo/send-bg.png'></image>
+        </view>
+      </view>
+    </view>
+ </view>
+</view>         

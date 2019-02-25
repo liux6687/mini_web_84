@@ -1,0 +1,89 @@
+<view class="pages">
+  <view class='header'>
+    <view class='top'>
+      <view class='time'>
+        <view class='h1'>发货倒计时</view>
+        <view class='time-info'>剩余11小时59分</view>
+      </view>
+      <view class='btn-box' bindtap='cancelSend'>
+        <text>取消发货</text>
+      </view>
+    </view>
+    <view class='bottom'>
+      <view class='address-icon'>
+        <image src='../../images/goodsInfo/address.png'></image>
+      </view>
+      <view class='bottom-right'>
+        <view class='user'>
+           <view class='userName'>
+            <view>张晓明</view>
+          </view>
+          <view class='phone'>
+            15620748266
+          </view>
+        </view>
+        <view class='address'>
+          <text class='weight'>天津市西青区宾水西道精武镇 天津工业大学</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='relus'>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/01.png'></image>
+        </view>
+        <text>发货请使用无任何店铺信息的包装</text>
+      </view>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/02.png'></image>
+        </view>
+        <text>请做好防掉包扣, 以便信息确认</text>
+      </view>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/03.png'></image>
+        </view>
+        <text>请于确认调货12小时内进行发货</text>
+      </view>
+    </view>
+    <!-- 物流 -->
+    <view class='logistics'>
+      <view class='company'>
+        <view class='h1'>物流公司</view>
+        <view class='input-box'>
+          <input type='text' placeholder='请输入物流公司'></input>
+        </view>
+      </view>
+      <view class='odd-num'>
+        <view class='h1'>物流公司</view>
+        <view class='input-box'>
+          <input type='number' placeholder='请输入物流单号'></input>
+        </view>
+      </view>
+    </view>
+    <!-- 上传 -->
+    <view class='upload'>
+      <view class='upload-items'>
+        <image wx:if="{{true}}" src='../../images/123.png'></image>
+        <view wx:else class='no-upload'>
+          <image src='../../images/goodsInfo/add.png'></image>
+          <text>物流底单</text>
+        </view>
+      </view>
+      <view class='upload-items'>
+        <image wx:if="{{false}}" src='../../images/123.png'></image>
+        <view wx:else class='no-upload'>
+          <image src='../../images/goodsInfo/add.png'></image>
+          <text>防掉包扣</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='submit-box'>
+  <view bindtap='submit'>确认发货</view>
+</view>

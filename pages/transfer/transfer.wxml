@@ -1,0 +1,50 @@
+<!-- 调货中页面 -->
+<view class='pages'>
+  <view class='header'>
+    <view class='search'>
+      <image src='../../images/home/search.png'></image>
+      <text>请输入货号或者名称搜索</text>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='goodsList'>
+      <view class='goods'>
+        <view class='top'>
+          <view class='goods-Id'>
+            <view>订单编号：123567895265962</view>
+            <view class='copy'>复制</view>
+          </view>
+          <view class='status'>已完成</view>
+        </view>
+        <view class='main'>
+          <view class='goods-img'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='main-right'>
+            <view class='title'>
+              <text>fhgjhfj fhgj jfhgjhg hfgjh 最新黄金 黄金</text>
+            </view>
+            <view class='goods-info'>
+              <view class='info'>
+                <text class='color'>白色</text>
+                <text class='size'>40</text>
+              </view>
+              <view class='price'>
+                <text class='weight'>￥799.00</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='bottom'>
+          <view class='time'>
+            <text>已发货：12时16分</text>
+          </view>
+          <view class='btn-box'>
+            <view bindtap='gotoOrderInfo'>查看详情</view>
+            <view class='btn'>立即发货</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

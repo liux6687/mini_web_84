@@ -1,0 +1,73 @@
+<!-- 确认调货页 -->
+<view class='pages'>
+  <view class='header'>
+    <view class='img-box'>
+      <image src='../../images/123.png'></image>
+    </view>
+    <view class='right'>
+      <view class='h1'>
+        <text>(DHFKHFKHKK KDHFKJHDKFJ) FGJKLGK JFGKJG KDJFKJF DJFKJFDK</text>
+      </view>
+      <view class='Id'>
+        <text>ID:123456789</text>
+        <text>尺寸：42.5</text>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='relus'>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/01.png'></image>
+        </view>
+        <text>发货请使用无任何店铺信息的包装</text>
+      </view>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/02.png'></image>
+        </view>
+        <text>请做好防掉包扣, 以便信息确认</text>
+      </view>
+      <view class='li'>
+        <view class='img-box'>
+          <image src='../../images/goodsInfo/03.png'></image>
+        </view>
+        <text>请于确认调货12小时内进行发货</text>
+      </view>
+    </view>
+    <view class='income'>
+      <view class='top'>
+        <view class='title weight'>本次收入</view>
+        <view class='h1 weight'>
+          <view class='money'>
+            <text>3289</text>
+            元
+          </view>
+          <view class='zf'>
+            需支付保证金 <text>80</text> 元
+          </view>
+        </view>
+      </view>
+      <view class='main'>
+        <view class='main-left'>
+          <view class='main-title'>当前剩余保证金（元）</view>
+          <view class='main-num'>2000</view>
+        </view>
+        <view class='main-right'>
+          <view class='main-title'>银行转账费0.5%（元）</view>
+          <view class='main-num'>-10</view>
+        </view>
+      </view>
+      <view class='bottom'>
+        <view class='h1'>实际收入</view>
+        <view class='result'>
+          <view>3279 <text>元</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
+
+<view class='submit-box'>
+  <view bindtap='gotoConfirmSendGoods'>确认调货</view>
+</view>

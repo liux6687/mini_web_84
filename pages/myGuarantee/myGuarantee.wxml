@@ -1,0 +1,148 @@
+<!-- 我的担保页 -->
+<view class='pages'>
+  <view class='header'>
+    <view class='h-bg'>
+      <image src='../../images/me/h-bg.png'></image>
+    </view>
+    <view class='h-btn'>
+      <image class='bg' src="../../images/me/btn-bg.png"></image>
+      <view class='main' bindtap='showModel'>
+        <text>担保他人</text>
+        <image class='r-move' src='../../images/r-move.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='mian'>
+    <view class='nav'>
+      <view class='nav-item {{selected == 1?"active": ""}}' data-index='1' bindtap='select'>担保我的6</view>
+      <view class='nav-item {{selected == 2?"active": ""}}' data-index='2' bindtap='select'>我担保的3</view>
+    </view>
+    <!-- 担保我的 -->
+    <view class='first-list clearfix' wx:if="{{selected == 1}}">
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/ID.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/ID.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 我担保的 -->
+    <view class='two-list clearfix' wx:if="{{selected == 2}}">
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard-btn' bindtap='remove'>
+          <image class='bg' src='../../images/me/remove-db.png'></image>
+          <text>取消担保</text>
+        </view>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- model -->
+  <view class='model' wx:if="{{modelShow}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>提示</text>
+      </view>
+      <view class='model-content'>
+        <view class='main'>
+          <view class='me'>
+            <view class='h1 weight'>我</view>
+            <view class='me-Id'>(ID: 51515111515)</view>
+          </view>
+          <view class='user'>
+            <view class='h1 weight'>愿意担保ID:</view>
+            <view class='input-box'>
+              <input type='number' placeholder='请输入对方ID'></input>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' bindtap='no'>取消</view>
+        <view class='yes' bindtap='yes'>确定担保</view>
+      </view>
+    </view>
+  </view>  

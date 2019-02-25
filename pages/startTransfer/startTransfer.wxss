@@ -1,0 +1,72 @@
+.header {
+  padding: 0 30rpx;
+  background: #fff;
+  margin-bottom: 18rpx;
+  border-top: 2rpx solid #f5f4f9;
+} 
+.footer {
+  background: #fff;
+  position: relative;
+}
+.footer .items:first-child, .header .items:first-child {
+  border: none;
+}
+.items {
+  display: flex;
+  justify-content: space-between;
+  height: 95rpx;
+  line-height: 95rpx;
+  border-top: 1rpx solid #f5f4f9;
+}
+.footer .items {
+  padding: 0 30rpx;
+}
+.button-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  height: 136rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #fff;
+}
+.button-box .submit {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.line {
+  width: 750rpx;
+  height: 15rpx;
+  position: absolute;
+  bottom: 103rpx;
+  left: 0;
+}
+.Profit {
+  color: #ef6f3e;
+}
+
+/* 模态弹出框内容 */
+.input-box {
+  border: 2rpx solid #c7cbd9;
+  box-sizing: border-box;
+  height: 70rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.input-box .text {
+  font-size: 30rpx;
+  margin: 0 30rpx;
+}
+.modelInput {
+  height: 80rpx;
+  border: 2rpx solid #f5f4f9;
+}
+
+

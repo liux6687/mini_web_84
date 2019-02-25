@@ -1,0 +1,168 @@
+.header {
+  padding: 18rpx 34rpx; 
+  position: relative;
+}
+.h-bg {
+  position: absolute;
+  top: 18rpx;
+  left: 50%;
+  margin-left: -342rpx;
+  width: 684rpx;
+  height: 155rpx;
+}
+.h-btn {
+  position: absolute;
+  top: 70rpx;
+  right: 35rpx;
+  width: 135rpx;
+  height: 55rpx;
+  color: #ef6f3e;
+}
+.h-btn .bg {
+  position: absolute;
+  /* z-index: 1; */
+  width: 135rpx;
+  height: 55rpx;
+}
+.h-btn .main {
+  width: 135rpx;
+  height: 55rpx;
+  position: absolute;
+  font-size: 20rpx;
+  z-index: 2;
+  flex: 1;
+  line-height: 55rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.h-btn .r-move {
+  width: 12rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+/* 内容mian */
+.mian {
+  position: fixed;
+  top: 200rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 0 30rpx; 
+}
+.mian .nav {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid  #f5f4f9;
+}
+.mian .nav .nav-item {
+  font-weight: bold;
+  margin-right: 50rpx;
+}
+.mian .nav .nav-item.active {
+  font-size: 30rpx;
+}
+
+
+/* 用户卡片 */
+.list-item {
+  position: relative;
+  float: left;
+  width: 335rpx;
+  height: 130rpx;
+  margin-right: 22rpx;
+  padding-top: 22rpx;
+}
+.list-item:nth-child(even) {
+  margin-right: 0rpx;
+}
+.list-item .userCard-bg {
+  position: absolute;
+  width: 335rpx;
+  height: 130rpx;
+}
+.userCard {
+  position: absolute;
+  display: flex;
+  height: 130rpx;
+  align-items: center;
+  z-index: 2;
+  padding-left: 25rpx;
+}
+.userCard .img-box {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 70rpx; 
+  overflow: hidden;
+  margin-right: 25rpx;
+}
+.userCard-right {
+  height: 70rpx;
+}
+.userCard .userCard-ID {
+  position: relative;
+}
+.userCard .h1 {
+  margin-bottom: 15rpx;
+}
+.userCard .userCard-ID text {
+  padding: 8rpx;
+  font-size: 18rpx;
+  padding-left: 40rpx;
+  border-radius: 40rpx;
+  background: #e5e6e9;
+}
+.userCard .userCard-ID image {
+  position: absolute;
+  border-radius: 30rpx;
+  top: -2rpx;
+  left: 8rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.userCard-btn {
+  position: absolute;
+  z-index: 10;
+  bottom: -20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 115rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #fff;
+}
+.userCard-btn>.bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.model .main .me, .model .main .user {
+  display: flex;
+  height: 75rpx;
+  align-items: center;
+}
+.model .main .me {
+  color: #ef6f3e;
+}
+.model .main .me .h1, .model .main .user .h1 {
+  margin-right: 20rpx;
+}
+.input-box {
+ border-bottom: 2rpx solid #ccc; 
+}
+
+
+.two-list {
+  padding-top: 22rpx;
+}
+.two-list .list-item {
+  padding-top: 0rpx;
+  margin-bottom: 45rpx;
+}

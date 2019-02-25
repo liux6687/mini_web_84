@@ -1,0 +1,26 @@
+<!-- 设置支付宝账号 -->
+<view class='setAl'>
+  <view class='content'>
+    <view class='items NOline'>
+      <view class='h1'>支付宝账号</view>
+      <view class='input-box'>
+        <input type="text" placeholder='请输入您的支付宝账号'></input>
+      </view>
+      <view class='btn-box'>
+        <image class='close' src='../../images/me/close.png'></image>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='h1'>验证码</view>
+      <view class='input-box'>
+        <input type="number" placeholder='请输入收到的验证码'></input>
+      </view>
+      <view class='btn-box'>
+        <view class='get-code'>获取验证码</view>
+      </view>
+    </view>
+  </view>
+  <view class='submit-box'>
+    <view>确认</view>
+  </view>
+</view> 

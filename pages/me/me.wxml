@@ -1,0 +1,82 @@
+<view class="me">
+  <view class='top'>
+    <!-- 用户信息 -->
+    <view class='user'>
+      <view class='userInfo'>
+        <view class='portrait'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='userInfo-right'>
+          <view class='h1'>用户名称</view>
+          <view class='Id'>
+            <image src='../../images/me/ID.png'></image>
+            <view class='Id-text'>123456789</view>
+          </view>
+        </view>
+      </view>
+      <view class='again-login'>
+        <view>重新获取</view>
+        <image src='../../images/me/load.png'></image>
+      </view>
+    </view> 
+    <!-- 店铺信息 -->
+    <view class='shop'>
+      <view class='shopInfo'>
+        <view class='shop-logo'>
+          <image src='../../images/123.png'></image>
+          <image src='../../images/me/shop.png'></image>
+        </view>
+        <view class='shop-right'>
+          <view class='h1'>兄弟体育</view>
+          <view class='imgList'>
+            <image src='../../images/123.png'></image>
+            <image src='../../images/123.png'></image>
+            <image src='../../images/123.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='mys'>
+    <view class='myService' bindtap='gotoMyService'>
+      <view class='num'>2</view>
+      <view>我的服务</view>
+    </view>
+    <view class='myTransferList' bindtap='gotoMyTransferList'>
+      <view class='num'>2</view>
+      <view>我的调货单</view>
+    </view>
+    <view class='myGuarantee' bindtap='gotoMyGuarantee'>
+      <view class='num'>2</view>
+      <view>我的担保</view>
+    </view>
+  </view>
+  <view class='myCredit' bindtap='gotoMyCredit'>
+      <image class='icon' src='../../images/me/icon01.png'></image>
+      <view class='right'>
+        <text class='weight'>我的信用分</text>
+        <text>10分</text>
+      </view>
+  </view>
+  <view class='mySecurityDeposit' bindtap='gotoMySecurityDeposit'>
+    <image class='icon' src='../../images/me/icon02.png'></image>
+    <view class='right'>
+      <text class='weight'>我的保证金</text>
+      <text>10分</text>
+    </view>
+  </view>
+  <view class='myWallet' bindtap='gotoMyWallet'>
+    <image class='icon' src='../../images/me/icon03.png'></image>
+    <view class='right'>
+      <text class='weight'>我的钱包</text>
+      <text>10分</text>
+    </view>
+  </view>
+  <view class='kefu'>
+     <image class='icon' src='../../images/me/kefu.png'></image>
+      <view class='right'>
+        <text class='weight'>联系客服</text>
+        <image class='move' src='../../images/me/move-r.png'></image>
+      </view>
+  </view>
+</view> 

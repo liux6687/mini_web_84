@@ -1,0 +1,232 @@
+<!-- 调货设置页面 -->
+<view class='setTransfer'>
+  <view class='dl'>
+    <view class='dt'>分享设置</view>
+    <view class='dd' data-index='1' bindtap="showModel">
+      <view class='main'>
+        <view class='h1'>查看您的调货列表</view>
+        <view class='right'>
+          <text class='text'>允许任何人查看</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='dd'  data-index='2' bindtap="showModel">
+       <view class='main line'>
+        <view class='h1'>为您调货</view>
+        <view class='right'>
+          <text class='text'>所有查看清单的用户</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='dt'>自动调货设置</view> -->
+    <!-- <view class='dd'>
+      <view class='main'>
+        <view class='h1'>商品调货设置</view>
+        <view class='right'>
+          <text class='text'>全部商品</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view> -->
+    <!-- <view class='dd'>
+      <view class='main'>
+        <view class='h1'>商品发货设置</view>
+        <view class='right'>
+          <text class='text'>自动发货</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view> -->
+    <view class='dt'>默认利润设置</view>
+    <view class='dd'  data-index='3' bindtap="showModel">
+      <view class='main'>
+        <view class='h1'>按固定利润</view>
+        <view class='right'>
+          <text class='text'>￥100</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='dd'  data-index='4' bindtap="showModel">
+      <view class='main'>
+        <view class='h1'>按百分比</view>
+        <view class='right'>
+          <text class='text'>5%</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <text>如需根据商品和尺码自定义利润, 请前往PC端进行设置。</text>
+  </view>
+</view>
+<view class='submit-box'>
+  <view bindtap='submit'>确认</view>
+</view>
+
+
+
+  <!-- 查看您的调货列表model -->
+  <view class='model' wx:if="{{model1}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>查看您的调货列表</text>
+      </view>
+      <view class='model-content'>
+        <view class='list'>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>允许任何人查看</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>仅允许完成平台验证的用户查看</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot-selected.png'></image>
+            <view>
+              <text>仅允许您担保的用户查看</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' data-index='1' bindtap='closeModel'>取消</view>
+      </view>
+    </view>
+  </view>
+   <!-- 为您调货model -->
+  <view class='model' wx:if="{{model2}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>为您调货</text>
+      </view>
+      <view class='model-content'>
+        <view class='list'>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>所有查看清单的用户</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot-selected.png'></image>
+            <view>
+              <text>您担保的用户</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' data-index='2' bindtap='closeModel'>取消</view>
+      </view>
+    </view>
+  </view>
+     <!-- 商品调货设置model -->
+  <!-- <view class='model' wx:if="{{false}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>商品调货设置</text>
+      </view>
+      <view class='model-content'>
+        <view class='list'>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>全部商品</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>仅自定义商品</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot-selected.png'></image>
+            <view>
+              <text>全部手动选择</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no'>取消</view>
+      </view>
+    </view>
+  </view> -->
+
+     <!-- 商品发货设置model -->
+  <!-- <view class='model' wx:if="{{false}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>商品发货设置</text>
+      </view>
+      <view class='model-content'>
+        <view class='list'>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>自动发货</text>
+            </view>
+          </view>
+          <view class='list-item'>
+            <image class='dot' src='../../images/dot.png'></image>
+            <view>
+              <text>手动发货</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no'>取消</view>
+      </view>
+    </view>
+  </view> -->
+
+  
+
+  <!-- 固定利润model -->
+  <view class='model' wx:if="{{model3}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>按固定利润</text>
+      </view>
+      <view class='model-content'>
+        <view class='input-box'>
+          <text class='text'>￥</text>
+          <input type='number' data-index='3' bindinput='setValue' placeholder='请输入...' value='{{moneyValue}}'></input>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' data-index='3' bindtap='closeModel'>取消</view>
+        <view class='yes' data-index='3' bindtap='yes'>确定</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 百分比model -->
+  <view class='model' wx:if="{{model4}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>按百分比</text>
+      </view>
+      <view class='model-content'>
+        <view class='input-box'>
+          <input type='number' data-index='3' bindinput='setValue' placeholder='请输入...' value='{{percentValue}}' style="direction: rtl;flex: 1;"></input>
+          <text class='text'>%</text>
+        </view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' data-index='4' bindtap='closeModel'>取消</view>
+        <view class='yes' data-index='4' bindtap='yes'>确定</view>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,189 @@
+<!-- 个人主页 -->
+<view class="myhome">
+  <view class='header'>
+    <view class='userInfo'>
+      <view class='portrait'>
+        <image src='../../images/123.png'></image>
+      </view>
+      <view class='userInfo-right'>
+        <view class='text'>用户名称</view>
+        <view class='ID'>
+          <text>123456789</text>
+          <image src='../../images/123.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='header-card'>
+      <image class='bg' src='../../images/me/myHome/bg.png'></image>
+      <view class='share'>
+        <view class='share-mian'>
+          <image src='../../images/me/myHome/share.png'></image>
+          <text>分享</text>
+        </view>
+        <image class='share-bg' src='../../images/me/myHome/share-bg.png'></image>
+      </view>
+      <view class='card-content'>
+        <view class='num'><text>15</text>分</view>
+        <view class='status'>信用良好</view>
+        <view class='content-footer'>
+          <view class='footer-left'>
+            <view class='h1'>累计交易</view>
+            <view class='h2'>￥654821.26</view>
+          </view>
+          <view class='footer-right'>
+            <view class='h1'>
+              <image src='../../images/me/myHome/bao.png'></image>
+              <text>承诺服务</text>
+            </view>
+            <view class='h2'>
+              <text>假一赔三</text>
+              <text>瑕疵退换</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='mian'>
+    <view class='nav'>
+      <view class='nav-item active'>TA担保的6</view>
+      <view class='nav-item'>担保TA的3</view>
+      <view class='nav-item'>TA的评价13</view>
+    </view>
+    <!-- 他担保的 -->
+    <view class='first-list clearfix' wx:if="{{true}}">
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 担保他的 -->
+    <view class='two-list clearfix' wx:if="{{navIndex}}">
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='list-item'>
+        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <view class='userCard'>
+          <view class='img-box'>
+            <image src='../../images/123.png'></image>
+          </view>
+          <view class='userCard-right'>
+            <view class='h1'>用户名称</view>
+            <view class='userCard-ID'>
+              <image src='../../images/123.png'></image>
+              <text>123456789</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 他的评价 -->
+    <view class='three-list' wx:if="{{navIndex}}">
+      <view class='comment-item'>
+        <view class='img-box'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='comment-item-right'>
+          <view class='h1'>昔日</view>
+          <view class='time'><text>2019-02-01</text>Nike Odyssey React dfdsfddf</view>
+          <view class='comment-main'>
+            <text>代理发货管理费的距离可根据累计拉开距离聚隆科技 据了解对方立刻决定离开纠纷 家里的空间弗兰克</text>
+          </view>
+        </view>
+      </view>
+      <view class='comment-item'>
+        <view class='img-box'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='comment-item-right'>
+          <view class='h1'>昔日</view>
+          <view class='time'><text>2019-02-01</text>Nike Odyssey React dfdsfddf</view>
+          <view class='comment-main'>
+            <text>代理发货管理费的距离可根据累计拉开距离聚隆科技 据了解对方立刻决定离开纠纷 家里的空间弗兰克</text>
+          </view>
+        </view>
+      </view>
+      <view class='comment-item'>
+        <view class='img-box'>
+          <image src='../../images/123.png'></image>
+        </view>
+        <view class='comment-item-right'>
+          <view class='h1'>昔日</view>
+          <view class='time'><text>2019-02-01</text>Nike Odyssey React dfdsfddf</view>
+          <view class='comment-main'>
+            <text>代理发货管理费的距离可根据累计拉开距离聚隆科技 据了解对方立刻决定离开纠纷 家里的空间弗兰克</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

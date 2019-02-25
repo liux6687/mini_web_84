@@ -1,0 +1,154 @@
+page {
+  line-height: 1;
+  background: #f5f4f9;
+  font-size: 25rpx;
+}
+/* 清除浮动 */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* 滚动条不可见 */
+::-webkit-scrollbar {
+    display: none;
+}
+
+button {
+    padding: 0;
+    line-height: normal;
+    background-color: transparent;
+    border: none;
+}
+button::after {
+    border: none;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+/* 字体加粗 */
+.weight {
+    font-weight: bold;
+}
+.noWeight {
+  font-weight: 500;
+}
+/* 浮动 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+
+/* 通用卡片样式 */
+.card {
+  background: #fff;
+  padding:  20rpx 30rpx;
+  margin-bottom: 24rpx;
+  border-radius: 10rpx;
+}
+.card .cardTitle {
+  height: 65rpx;
+  line-height: 65rpx;
+  font-weight: bold; 
+  position: relative;
+}
+
+
+
+/* 表格 */
+
+.table {
+  box-sizing: border-box;
+}
+
+.table .th,.table .tr {
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #e6e6e6;
+  border-bottom: none;
+}
+.table .tr:last-child {
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.table .th .td,.table .tr .td {
+  border-left: 2rpx solid #e6e6e6;
+}
+.table .th .td:first-child,.table .tr .td:first-child {
+  border-left: none;
+}
+
+/* 文字省略 */
+
+.textEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 复制 */
+.copy {
+  padding: 5rpx 10rpx;
+  border-radius: 30rpx;
+  background: #84878d;
+  color: #fff;
+  margin-left: 10rpx;
+  font-size: 18rpx;
+}
+.color1 {
+  color: #ef6f3e;
+}
+
+/* 弹出框基本样式 */
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.3);
+  padding: 0 40rpx;
+}
+.model-box {
+  background: #fff;
+  margin: 300rpx auto;
+  border-radius: 25rpx;
+}
+.model-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #f5f4f9;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30rpx;
+}
+.model-content {
+  padding: 30rpx 90rpx 90rpx;
+  border-bottom: 2rpx solid #f5f4f9; 
+}
+.model-fooder {
+  display: flex;
+  justify-content: space-around;
+}
+.model-fooder view {
+  flex: 1;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.model .yes {
+  flex: 1;
+  color: #ef6f3e;
+}
+.model .no {
+  border-right: 2rpx solid #f5f4f9;
+  flex: 1;
+}

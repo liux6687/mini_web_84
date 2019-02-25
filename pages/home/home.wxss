@@ -1,0 +1,240 @@
+/* 不足 */
+.home .credit-lack .credit-Rules {
+  padding: 0 32rpx;
+}
+.credit-lack .header {
+  position: relative;
+  height: 360rpx;
+  margin-bottom: 50rpx;
+}
+.credit-lack .header .h-bg {
+  position: absolute;
+}
+.credit-lack .header .header-top {
+  position: absolute;
+  z-index: 1;
+  padding: 50rpx;
+  color: #fff;
+}
+.credit-lack .header .header-top .title-h1 {
+  font-size: 30rpx;
+  margin-bottom: 28rpx;
+}
+
+.header-content {
+  position: absolute;
+  top: 200rpx;
+ 
+}
+.main {
+  margin: 0 auto;
+  width: 742rpx;
+  position: absolute;
+  top: 38rpx;
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+}
+.m-bg {
+  position: absolute;
+  width: 742rpx;
+  height: 216rpx;
+}
+.main .portrait {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  overflow: hidden;
+  margin-left: 54rpx;
+  margin-right: 36rpx;
+}
+.main .Id,.main .credit-num {
+  display: flex;
+  align-items: center;
+  margin-right: 36rpx;
+}
+.main .Id image,.main .credit-num image {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 44rpx;
+  overflow: hidden;
+  margin-right: 15rpx;
+}
+.main .Id .text ,.main .credit-num .text {
+  font-size: 20rpx;
+  padding-top: 14rpx;
+  color: #a4a4a4;
+}
+
+
+
+
+
+.credit-lack .rules-title {
+  font-size: 30rpx;
+  padding-bottom: 40rpx;
+  font-weight: bold;
+}
+.credit-lack .cardTitle-info {
+  line-height: 40rpx;
+  padding-bottom: 30rpx;
+} 
+/* 表格 */
+.credit-lack .table .th {
+  background: #e6e6e6;
+}
+.credit-lack .table .th,.credit-lack .table .tr {
+  height: 80rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.credit-lack .table .td {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding-left: 49rpx;
+}
+.credit-lack .table .td:first-child {
+  flex: 0 0 260rpx;
+}
+.credit-lack .footer {
+  height: 56rpx;
+}
+
+.credit-lack .card .cardTitle .move {
+  position: absolute;
+  top: 10rpx;
+  right: -30rpx;
+  height: 44rpx;
+  font-weight: 500;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+}
+.move-text {
+  position: relative;
+  top: -10rpx;
+  z-index: 2;
+}
+.r-move-b {
+  position: relative;
+  top: -8rpx;
+  width: 10rpx;
+  height: 20rpx;
+  margin-left: 12rpx;
+  z-index: 2;
+}
+.move-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
+.credit-lack .card .cardTitle .first-move {
+  width: 124rpx;
+}
+.credit-lack .card .cardTitle .two-move {
+  width: 170rpx;
+}
+.credit-lack .card .cardTitle .three-move {
+  width: 144rpx;
+}
+.credit-lack .card .cardTitle .move .move-img {
+  width: 12rpx;
+  height: 24rpx;
+  margin: 0 20rpx 0 10rpx;
+}
+/* 足够 */
+.credit-ample {
+}
+.credit-ample .credit-ample-top {
+  background: #fff;
+  padding: 24rpx 35rpx 16rpx;
+}
+.credit-ample-top .relus {
+  position: relative;
+}
+.credit-ample-top .relus .bg {
+  width: 682rpx;
+  height: 156rpx;
+}
+.credit-ample-top .relus .text-img {
+  position: absolute;
+  top: 45rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 457rpx;
+  height: 27rpx;
+}
+.credit-ample-top .relus .text {
+  color: #fff;
+  position: absolute;
+  top: 90rpx;
+  left: 455rpx;
+}
+.credit-ample-top .relus .move-right {
+  margin-left: 10rpx;
+  width: 15rpx;
+  height: 17rpx;
+}
+.search-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.credit-ample-top .search {
+  margin-top: 16rpx;
+  background: #f2f2f2;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-radius: 68rpx;
+}
+.search-icon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+}
+.credit-ample-top .search .search-content {
+  margin: 0 auto;
+}
+/* 商品列表 */
+.credit-ample .goods-list {
+   padding: 24rpx;
+}
+
+.credit-ample .goods-list .listItem {
+  width: 342rpx; 
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+}
+.credit-ample .goods-list .listItem:nth-child(odd) {
+  float: left;
+}
+.credit-ample .goods-list .listItem:nth-child(even) {
+  float: right
+}
+.credit-ample .goods-list .listItem .imgBox {
+  height: 340rpx;
+}
+.credit-ample .goods-info {
+  background: #fff;
+  padding: 20rpx;
+  font-weight: bold;
+}
+.credit-ample .goods-info .info-top {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  line-height: 1;
+}
+.credit-ample .goods-info .info-bottom {
+  display: flex;
+  line-height: 1;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}

@@ -1,0 +1,148 @@
+.header {
+  position: relative;
+  width: 750rpx;
+  height: 370rpx;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  padding: 55rpx 0 30rpx;
+  font-size: 20rpx;
+  color: #ef6f3e;
+}
+.mySecurityDeposit {
+  font-weight: bold;
+  font-size: 60rpx;
+  color: #ef6f3e;
+  padding-bottom: 10rpx;
+}
+.ellipse {
+  width: 120rpx;
+  height: 8rpx;
+  margin-bottom: 30rpx;
+}
+.freeze {
+  display: flex;
+  height: 65rpx;
+}
+.freeze-num {
+  color: #fff;
+}
+.freeze .look-info {
+  color: #afafaf;
+  margin-left: 25rpx;
+}
+.freeze .look-info image {
+  width: 10rpx;
+  height: 20rpx;
+  margin: 0 10rpx;
+}
+.btn-box {
+  display: flex;
+  color: #fff;
+}
+.btn-box view {
+  position: relative;
+  padding: 15rpx;
+  padding-left: 50rpx;
+  border: 2rpx solid #fff;
+  border-radius: 8rpx;
+}
+.btn-box view:first-child {
+  margin-right: 20rpx;
+}
+.btn-box view image {
+  position: absolute;
+  left: 10rpx;
+  top: 16rpx;
+  width: 28rpx;
+  height: 22rpx;
+}
+/* list  */
+.items {
+  padding-left: 30rpx;
+  height: 135rpx;
+  background: #fff;
+}
+.NOline {
+  border: none!important;
+}
+.items .items-content {
+  height: 135rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2rpx solid #f5f4f9;
+}
+.items .left {
+  display: flex;
+  flex-direction: column;
+}
+.items .right {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30rpx;
+}
+.items .left .h1, .items .right .h1 {
+  margin-bottom: 18rpx;
+  font-size: 22rpx;
+}
+.items .left .h1 {
+  font-weight: bold;
+}
+.money {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.time {
+  color: #afafaf;
+}
+
+
+/* 模态弹出框内容 */
+.input-box {
+  border: 2rpx solid #c7cbd9;
+  box-sizing: border-box;
+  height: 70rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.input-box .text {
+  font-size: 30rpx;
+  margin: 0 30rpx;
+}
+.modelInput {
+  height: 80rpx;
+  border: 2rpx solid #f5f4f9;
+}
+
+.input-box1 {
+  display: flex;
+  align-items: center;
+}
+.input-box1 input {
+  border: 2rpx solid #c7cbd9;
+  box-sizing: border-box;
+  height: 70rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 16rpx;
+}
+.input-box1 .text {
+  font-size: 30rpx;
+  margin: 0 30rpx;
+}

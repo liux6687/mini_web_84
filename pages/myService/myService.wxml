@@ -1,0 +1,35 @@
+<!-- 我的服务 -->
+<view class="pages">
+  <view class='header'>
+    <view class='logo'>
+      <image src='../../images/me/ser-logo.png'></image>
+    </view>
+    <view class='h-text'>
+        选择此服务可以添加您的信用分, 同时也会有更多的店家愿意与您合作; 若您需要取消此项服务, 请于订单完成后取消。
+    </view>
+  </view>
+  <view class='content'>
+    <view class='items NOline'>
+      <view class='main' data-index='1' data-selsect='{{select1}}' bindtap='switch'>
+        <image class='icon' src='../../images/me/xin.png'></image>
+        <view class='m-right'>
+          <view class='h1 weight'>假一赔三</view>
+          <view class='img-box'>
+            <image src='../../images/me/{{select1 == true?"true":"false"}}.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='items'>
+      <view class='main' data-index='2' data-selsect='{{select2}}' bindtap='switch'>
+        <image class='icon' src='../../images/me/huan.png'></image>
+        <view class='m-right'>
+          <view class='h1 weight'>瑕疵退换</view>
+          <view class='img-box'>
+            <image src='../../images/me/{{select2 == true?"true":"false"}}.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

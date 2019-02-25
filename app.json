@@ -1,0 +1,87 @@
+{
+  "pages":[
+    "pages/setTransfer/setTransfer",
+    
+    "pages/home/home",
+    
+    
+    "pages/goodsInfo/goodsInfo",
+    
+    "pages/search/search",
+    
+    
+    "pages/myService/myService",
+    
+    
+    "pages/transfer/transfer",
+    
+    "pages/orderInfo/orderInfo",
+    
+    
+    "pages/myGuarantee/myGuarantee",
+    
+    
+    "pages/transferList/transferList",
+    
+    
+    
+    
+    "pages/confirmSendGoods/confirmSendGoods",
+    
+    
+    "pages/confirmTransfer/confirmTransfer",
+    
+    
+    "pages/withdrawals/withdrawals",
+
+    "pages/myWallet/myWallet",
+    
+    
+    
+    "pages/myHome/myHome",
+    
+    "pages/mySecurityDeposit/mySecurityDeposit",
+    
+    
+    "pages/startTransfer/startTransfer",
+    
+    "pages/me/me",
+    "pages/myTransferList/myTransferList",
+    "pages/rules/rules",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/freezeInfo/freezeInfo",
+    "pages/setAl/setAl"
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "84调货",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "84调货",
+        "iconPath": "./images/tabBar/icon1.png",
+        "selectedIconPath": "./images/tabBar/icon1-selected.png"
+      },
+      {
+        "pagePath": "pages/transfer/transfer",
+        "text": "调货中",
+        "iconPath": "./images/tabBar/icon2.png",
+        "selectedIconPath": "./images/tabBar/icon2-selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "./images/tabBar/icon3.png",
+        "selectedIconPath": "./images/tabBar/icon3-selected.png"
+      }
+    ]
+  }
+}

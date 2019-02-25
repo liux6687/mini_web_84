@@ -1,0 +1,43 @@
+/* list  */
+page {
+  padding-top: 24rpx;
+}
+.items {
+  padding-left: 30rpx;
+  height: 135rpx;
+  background: #fff;
+}
+.NOline {
+  border: none!important;
+}
+.items .items-content {
+  height: 135rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2rpx solid #f5f4f9;
+}
+.items .left {
+  display: flex;
+  flex-direction: column;
+}
+.items .right {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30rpx;
+  align-items: flex-end;
+}
+.items .left .h1, .items .right .h1 {
+  margin-bottom: 18rpx;
+  font-weight: bold;
+}
+.money {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.time {
+  color: #afafaf;
+}
+.status {
+  color: #ef6f3e;
+}
