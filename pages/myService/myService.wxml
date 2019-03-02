@@ -15,7 +15,7 @@
         <view class='m-right'>
           <view class='h1 weight'>假一赔三</view>
           <view class='img-box'>
-            <image src='../../images/me/{{select1 == true?"true":"false"}}.png'></image>
+            <image src='../../images/me/{{select1 == 0?"true":"false"}}.png'></image>
           </view>
         </view>
       </view>
@@ -26,7 +26,7 @@
         <view class='m-right'>
           <view class='h1 weight'>瑕疵退换</view>
           <view class='img-box'>
-            <image src='../../images/me/{{select2 == true?"true":"false"}}.png'></image>
+            <image src='../../images/me/{{select2 == 0?"true":"false"}}.png'></image>
           </view>
         </view>
       </view>

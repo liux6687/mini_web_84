@@ -85,9 +85,19 @@
   font-weight: bold;
 }
 .logistics .company .input-box,.logistics .odd-num .input-box {
+  flex: 1;
   padding-left: 15rpx;
 }
-
+.logistics .company .icon-box {
+  width: 36rpx;
+  height: 25rpx;
+  margin-right: 20rpx;
+}
+.logistics .odd-num .icon-box {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
 /* upload */
 .upload {
   margin-top: 18rpx;

@@ -53,6 +53,15 @@ page {
   color: #ef6f3e;
   display: flex;
   align-items: center;
+  position: relative;
+}
+.getUserInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 
@@ -116,4 +125,18 @@ page {
     background-color: #19ab18;
     border-radius: 60rpx;
     margin-top: 40rpx;
+}
+.model {
+  color: #000;
+}
+.model .model-content .items {
+  height: 80rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.model .model-content .items image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 25rpx;
 }

@@ -1,0 +1,6 @@
+var toNum = function (str) {
+  return Number(str)
+}
+module.exports = {
+  toNum: toNum
+}

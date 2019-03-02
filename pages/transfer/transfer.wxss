@@ -14,10 +14,15 @@
   align-items: center;
   justify-content: center;
 }
+.header .search .closeBox {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
 .header .search image {
   width: 26rpx;
   height: 26rpx;
-  margin-right: 20rpx;
 }
 .goods {
   background: #fff;

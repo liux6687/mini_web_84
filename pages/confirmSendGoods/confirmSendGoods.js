@@ -1,11 +1,14 @@
 // pages/confirmSendGoods/confirmSendGoods.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goodsInfo: {},
+    logistics: "", //物流公司
+    logistics_num: "", //物流单号
   },
   // 确认发货按钮
   submit() {
@@ -37,7 +40,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var goodsInfo = JSON.parse(options.goodsInfo);
+    var token = wx.getStorageSync("token")
+    // wx.request({
+    //   url: app.globalData.apiURL + '/api/dms/demand/receive',
+    //   method: "POST",
+    //   data: {
+    //     demand_id: goodsInfo.id,
+    //     token
+    //   },
+    //   success: function(res) {
+    //     console.log("jfkdjkf",res)
+    //   }
+    // })
   },
 
   /**

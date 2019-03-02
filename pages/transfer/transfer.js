@@ -1,11 +1,19 @@
 // pages/transfer/transfer.js
+var app =getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    value: "",
+  },
+  // 获取搜索内容
+  getSearchValue(e) {
+    var value = e.detail.value;
+    this.setData({
+      value
+    })
   },
   // 点击查看详情
   gotoOrderInfo(){
@@ -13,11 +21,28 @@ Page({
       url: '/pages/orderInfo/orderInfo',
     })
   },
+  // 前往搜索页
+  search() {
+   console.log(111)
+  },
+  close() {
+    this.setData({
+      value: ""
+    })
+  },
+  // 复制
+  copy() {
+    var str = "123456789"
+    app.copy(str)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    var time = Date.parse(new Date());
+    var time1 = time + 24 * 60 * 60;
+    var time3 = time + 48 * 60 * 60;
   },
 
   /**

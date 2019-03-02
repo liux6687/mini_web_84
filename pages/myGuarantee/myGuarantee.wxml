@@ -14,52 +14,22 @@
   </view>
   <view class='mian'>
     <view class='nav'>
-      <view class='nav-item {{selected == 1?"active": ""}}' data-index='1' bindtap='select'>担保我的6</view>
-      <view class='nav-item {{selected == 2?"active": ""}}' data-index='2' bindtap='select'>我担保的3</view>
+      <view class='nav-item {{selected == 1?"active": ""}}' data-index='1' bindtap='select'>担保我的{{vouchee.length}}</view>
+      <view class='nav-item {{selected == 2?"active": ""}}' data-index='2' bindtap='select'>我担保的{{guarantee.length}}</view>
     </view>
     <!-- 担保我的 -->
     <view class='first-list clearfix' wx:if="{{selected == 1}}">
-      <view class='list-item'>
+      <view class='list-item' wx:for="{{vouchee}}" wx:key="{{index}}">
         <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
         <view class='userCard'>
           <view class='img-box'>
             <image src='../../images/123.png'></image>
           </view>
           <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
+            <view class='h1'>{{item.store_name}}</view>
             <view class='userCard-ID'>
               <image src='../../images/ID.png'></image>
-              <text>123456789</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class='list-item'>
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
-        <view class='userCard'>
-          <view class='img-box'>
-            <image src='../../images/123.png'></image>
-          </view>
-          <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
-            <view class='userCard-ID'>
-              <image src='../../images/ID.png'></image>
-              <text>123456789</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class='list-item'>
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
-        <view class='userCard'>
-          <view class='img-box'>
-            <image src='../../images/123.png'></image>
-          </view>
-          <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
-            <view class='userCard-ID'>
-              <image src='../../images/123.png'></image>
-              <text>123456789</text>
+              <text>{{item.id}}</text>
             </view>
           </view>
         </view>
@@ -67,9 +37,9 @@
     </view>
     <!-- 我担保的 -->
     <view class='two-list clearfix' wx:if="{{selected == 2}}">
-      <view class='list-item'>
+      <view class='list-item' wx:for="{{guarantee}}" wx:key="{{index}}">
         <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
-        <view class='userCard-btn' bindtap='remove'>
+        <view class='userCard-btn' data-index='{{index}}' bindtap='remove'>
           <image class='bg' src='../../images/me/remove-db.png'></image>
           <text>取消担保</text>
         </view>
@@ -78,40 +48,10 @@
             <image src='../../images/123.png'></image>
           </view>
           <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
+            <view class='h1'>{{item.store_name}}</view>
             <view class='userCard-ID'>
-              <image src='../../images/123.png'></image>
-              <text>123456789</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class='list-item'>
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
-        <view class='userCard'>
-          <view class='img-box'>
-            <image src='../../images/123.png'></image>
-          </view>
-          <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
-            <view class='userCard-ID'>
-              <image src='../../images/123.png'></image>
-              <text>123456789</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class='list-item'>
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
-        <view class='userCard'>
-          <view class='img-box'>
-            <image src='../../images/123.png'></image>
-          </view>
-          <view class='userCard-right'>
-            <view class='h1'>用户名称</view>
-            <view class='userCard-ID'>
-              <image src='../../images/123.png'></image>
-              <text>123456789</text>
+              <image src='../../images/ID.png'></image>
+              <text>{{item.id}}</text>
             </view>
           </view>
         </view>
@@ -130,12 +70,12 @@
         <view class='main'>
           <view class='me'>
             <view class='h1 weight'>我</view>
-            <view class='me-Id'>(ID: 51515111515)</view>
+            <view class='me-Id'>(ID: {{userInfo.id}})</view>
           </view>
           <view class='user'>
             <view class='h1 weight'>愿意担保ID:</view>
             <view class='input-box'>
-              <input type='number' placeholder='请输入对方ID'></input>
+              <input type='number' bindinput="getValue" placeholder='请输入对方ID'></input>
             </view>
           </view>
         </view>

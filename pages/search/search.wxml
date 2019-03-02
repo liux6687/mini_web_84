@@ -13,9 +13,7 @@
       <image class='remove' src='../../images/remove.png' bindtap='empty'></image>
     </view>
     <view class='list clearfix'>
-      <view class='li'>adidas</view>
-      <view class='li'>fdgdfgfdg gfdgdfgdfd</view>
-      <view class='li'>sdfdsfdsfds</view>
+      <view class='li' bindtap='searchItem' data-item='{{item}}' wx:for="{{searchList}}" wx:for-index="idx" wx:for-item="item" wx:key="{{idx}}">{{item}}</view>
     </view>
   </view>
 </view>

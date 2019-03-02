@@ -34,13 +34,13 @@
     <view class='cardContent'>
       <view class='twoCard'>
         <view class='list-dl'>
-          <view class='dt'>1. 供货商将在订单确认12个小时内为您发货</view>
-          <view class='dd'>(1) 若12小时未发货, 将赔偿您押金</view>
-          <view class='dd'>(2) 若24小时未发货, 该订单重新进入求货状态</view>
+          <view class='dt'>1. 供货商将在订单确认24个小时内为您发货</view>
+          <view class='dd'>(1) 若24小时未发货, 将赔偿您押金</view>
+          <view class='dd'>(2) 若48小时未发货, 该订单重新进入求货状态</view>
           <view class='dt'>2. 若您想取消求货</view>
           <view class='dd'>(1) 未有供货商确认的的情况, 无责任取消</view>
-          <view class='dd'>(2) 已有供货商确认12小时内, 取消将需要赔付至供货方订单金额4%的相应违约金</view>
-          <view class='dd'>(3) 供货商超过12小时未发货, 您可以获得相应赔偿, 并且可以无责任取消</view>
+          <view class='dd'>(2) 已有供货商确认24小时内, 取消将需要赔付至供货方订单金额4%的相应违约金</view>
+          <view class='dd'>(3) 供货商超过24小时未发货, 您可以获得相应赔偿, 并且可以无责任取消</view>
         </view>
       </view>
     </view>

@@ -1,44 +1,99 @@
 // pages/myService/myService.js
+var app =getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    select1: false,
-    select2: false
+    select1: 1,
+    select2: 1,
+    item1: null,
   },
   switch(e) {
     var { select1, select2 } = this.data;
+    var that = this;
     var idx = e.currentTarget.dataset.index;
     if(idx == 1) {
-      var selected = !select1
-      this.setData({
-        select1: !select1
-      })
-      if (selected) {
-        console.log("假一赔三选中")
+      if (select1 != 0) {
+        // 说明没选中 发请求  请求选中
+        that.setData({
+          select1: 0
+        })
+        that.setService(0) 
       }else {
-        console.log("假一赔三取消选中")
+        // 说明选中了
+        that.setData({
+          select1: 1
+        })
+        that.setService(0) 
       }
-
     }else if(idx == 2) {
-      var selected = !select2
-      this.setData({
-        select2: !select2
-      })
-      if (selected) {
-        console.log("瑕疵退换选中")
-      }else {
-        console.log("瑕疵退换取消选中")
+      if (select2 != 0) {
+        // 说明没选中 发请求  请求选中
+        that.setData({
+          select2: 0
+        })
+        that.setService(1)
+      } else {
+        // 说明选中了
+        that.setData({
+          select2: 1
+        })
+        that.setService(1)
       }
     }
+  },
+  setService(service_type) {
+    var that = this;
+    app.isToken(function goNext(token) {
+      wx.request({
+        url: app.globalData.apiURL + '/api/dms/service',
+        method: "POST",
+        data: {
+          token,
+          service_type: service_type
+        },
+        success(res) {
+          if(res.data.status == 201) {
+            wx.showToast({
+              title: res.data.message,
+              icon: "none"
+            })
+          } 
+        }
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    app.isToken(function goNext(token) {
+      wx.request({
+        url: app.globalData.apiURL + '/api/dms/service',
+        data: {
+          token
+        },
+        success(res) {
+          if(res.data.status == 200) {
+            let arr = res.data.data;
+            for(let i = 0; i < arr.length; i++) {
+              if (arr[i].service_type == 0) {
+                that.setData({
+                  select1: 0
+                })
+              } else if (arr[i].service_type == 1) {
+                that.setData({
+                  select2: 0
+                })
+              }
+            }
+          }
+        }
+      })
+    })
   },
 
   /**

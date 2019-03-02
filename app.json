@@ -1,72 +1,69 @@
 {
   "pages":[
-    "pages/setTransfer/setTransfer",
     
     "pages/home/home",
     
+    "pages/myService/myService",
+    "pages/login/login",
     
-    "pages/goodsInfo/goodsInfo",
+    
+    "pages/myTransferList/myTransferList",
+    "pages/startTransfer/startTransfer",
+    
+    "pages/setTransfer/setTransfer",
+    
+    "pages/myGuarantee/myGuarantee",
+    
+    "pages/confirmSendGoods/confirmSendGoods",
+    
+    "pages/me/me",            
+    
+    "pages/mine/mine",
+    
+    "pages/setAl/setAl",
     
     "pages/search/search",
-    
-    
-    "pages/myService/myService",
-    
-    
-    "pages/transfer/transfer",
     
     "pages/orderInfo/orderInfo",
     
     
-    "pages/myGuarantee/myGuarantee",
+    "pages/goodsInfo/goodsInfo",
+    
+    
+    "pages/transfer/transfer",
     
     
     "pages/transferList/transferList",
     
     
-    
-    
-    "pages/confirmSendGoods/confirmSendGoods",
-    
-    
     "pages/confirmTransfer/confirmTransfer",
-    
     
     "pages/withdrawals/withdrawals",
 
     "pages/myWallet/myWallet",
-    
-    
     
     "pages/myHome/myHome",
     
     "pages/mySecurityDeposit/mySecurityDeposit",
     
     
-    "pages/startTransfer/startTransfer",
-    
-    "pages/me/me",
-    "pages/myTransferList/myTransferList",
     "pages/rules/rules",
-    "pages/mine/mine",
-    "pages/login/login",
-    "pages/freezeInfo/freezeInfo",
-    "pages/setAl/setAl"
+    "pages/freezeInfo/freezeInfo"
     
     
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "84调货",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#3a3a3a",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "84交易"
   },
   "tabBar": {
     "selectedColor": "#000000",
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "84调货",
+        "text": "84交易",
         "iconPath": "./images/tabBar/icon1.png",
         "selectedIconPath": "./images/tabBar/icon1-selected.png"
       },

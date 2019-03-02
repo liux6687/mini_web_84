@@ -1,16 +1,54 @@
 // pages/orderInfo/orderInfo.js
+const qiniuUploader = require("../../utils/qiniuUploader"); //七牛sdk
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    img: ''
   },
   // 前往个人主页
   gotomyHome() {
     wx.redirectTo({
       url: '/pages/myHome/myHome',
+    })
+  },
+  // 图片上传
+  upload() {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        console.log(res)
+        var tempFilePath = res.tempFilePaths[0];
+        var imgName = tempFilePath.substr(30, 50);
+        qiniuUploader.upload(tempFilePath, (res) => {
+          console.log(111)
+          return
+          that.setData({
+            img: res.imageURL
+          })
+        }, (error) => {
+          console.log(error)
+        }, {
+            region: 'NCN',
+            uploadURL: 'https://upload-z1.qiniup.com',
+            domain: 'https://static.tosneaker.com',
+            // domain: app.globalData.qiniuImgUrl,
+            key: 'uploads/_tmp/' + imgName,
+            uptoken: that.data.qiniuToken
+          })
+
+      }
+    })
+  },
+  // 打电话
+  contact() {
+    wx.makePhoneCall({
+      phoneNumber: '15222684638' // 仅为示例，并非真实的电话号码
     })
   },
   /**

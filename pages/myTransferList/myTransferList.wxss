@@ -11,6 +11,13 @@
   align-items: center;
 }
 .header-left .selected {
+  display: flex;
+  align-items: center;
+}
+.header-left .selected:first-child {
+  margin-right: 20rpx;
+}
+.header-left .selected text {
   padding: 30rpx 0;
 }
 .header-left image {
@@ -26,7 +33,11 @@
 .set,.share {
   display: flex;
   padding: 30rpx 0;
-
+  align-items: center;
+}
+.share button {
+  font-size: 25rpx;
+  
 }
 .set {
   margin-right: 35rpx;
@@ -70,9 +81,21 @@
 .goodsDetails .goodsDetails-right .right-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.color {
+.goodsDetails .goodsDetails-right .right-bottom .item-info {
   margin-right: 20rpx;
+  width: 200rpx;
+}
+.goodsDetails .info {
+  display: flex;
+}
+.goodsDetails .info view:first-child{
+  flex: 0 0 80rpx;
+}
+.goodsDetails .item-info .color {
+  white-space: nowrap;
+  margin-bottom: 5rpx;
 }
 .cardFooter {
   display: flex;

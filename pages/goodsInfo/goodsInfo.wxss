@@ -37,6 +37,7 @@
 }
 .select-items {
   margin-left: 60rpx;
+  height: 90rpx;
   display: flex;
   align-items: center;
 }

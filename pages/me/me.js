@@ -1,4 +1,6 @@
 // pages/me/me.js
+// var meiqiaPlugin = requirePlugin("meiqia");
+const app = getApp()
 Page({
 
   /**
@@ -6,6 +8,12 @@ Page({
    */
   data: {
 
+  },
+  // 跳到登录页 重新登录
+  gotoMine() {
+    wx.navigateTo({
+      url: '/pages/mine/mine',
+    })
   },
   // 我的服务
   gotoMyService() {
@@ -25,6 +33,12 @@ Page({
       url: '/pages/myGuarantee/myGuarantee',
     })
   },
+  // // 我的信用分
+  // gotoMyCredit() {
+  //   wx.navigateTo({
+  //     url: '/pages/myCredit/myCredit',
+  //   })
+  // },
   // 我的保证金
   gotoMySecurityDeposit() {
     wx.navigateTo({

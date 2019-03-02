@@ -12,8 +12,9 @@
   <view class='bottom'>
     <view class='phone'>
       <view>1. 手机号验证</view>
-        <view class='move' bindtap='verifyPhone'>
-        立即验证 
+        <view class='move'>
+        <button class='getUserInfo' hover-class='none' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="verifyPhone"></button>
+        立即验证
         <image class='icon' src='../../images/r-move.png'></image>
         <!-- <image class='icon-yes' src='../../images/yes.png'></image> -->
       </view>
@@ -51,4 +52,23 @@
         <button class='nameOther' bindtap='nameOther'>取消</button>
     </view>
   </view>
+
+  <!-- 缴纳保证金model -->
+  <view class='model' wx:if="{{selectModel}}">
+    <view class='model-box'>
+      <view class='model-title'>
+        <text>用户选择</text>
+      </view>
+      <view class='model-content'>
+          <view data-index='0' class='items' bindtap='selected'><image src='../../images/{{selected==0?"dot-selected":"dot"}}.png'></image>  无店铺</view>
+          <view data-index='1' class='items' bindtap='selected'><image src='../../images/{{selected==1?"dot-selected":"dot"}}.png'></image>有店铺, 但不是店主</view>
+      </view>
+      <view class='model-fooder'>
+        <view class='no' bindtap='no'>取消</view>
+        <view class='yes' bindtap='yes'>确定</view>
+      </view>
+    </view>
+  </view>
+
+
 </view>

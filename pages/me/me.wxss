@@ -126,7 +126,7 @@
   display: flex;
   align-items: center;
   background: #fff;
-  padding: 44rpx 40rpx;
+  padding: 0rpx 40rpx;
   margin-bottom: 18rpx;
 }
 .myCredit .icon,.kefu .icon,.mySecurityDeposit .icon,.myWallet .icon {
@@ -136,6 +136,7 @@
 }
 .myCredit .right,.kefu .right,.mySecurityDeposit .right,.myWallet .right {
   display: flex;
+  padding: 44rpx 0rpx;
   flex: 1;
   justify-content: space-between;
 }
@@ -146,4 +147,15 @@
 .kefu .move {
   width: 10rpx;
   height: 20rpx;
+}
+.kefu  .right {
+  position: relative;
+}
+.kefu-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }

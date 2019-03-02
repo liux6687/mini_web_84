@@ -52,15 +52,21 @@
     <!-- 物流 -->
     <view class='logistics'>
       <view class='company'>
-        <view class='h1'>物流公司</view>
+        <view class='h1'>物流公司：</view>
         <view class='input-box'>
           <input type='text' placeholder='请输入物流公司'></input>
         </view>
+        <view class='icon-box'>
+          <image src='../../images/drop_down.png'></image>
+        </view>
       </view>
       <view class='odd-num'>
-        <view class='h1'>物流公司</view>
+        <view class='h1'>物流单号：</view>
         <view class='input-box'>
           <input type='number' placeholder='请输入物流单号'></input>
+        </view>
+        <view class='icon-box'>
+          <image src='../../images/sao.png'></image>
         </view>
       </view>
     </view>

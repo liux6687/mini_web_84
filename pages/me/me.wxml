@@ -14,7 +14,7 @@
           </view>
         </view>
       </view>
-      <view class='again-login'>
+      <view class='again-login' bindtap='gotoMine'>
         <view>重新获取</view>
         <image src='../../images/me/load.png'></image>
       </view>
@@ -51,7 +51,7 @@
       <view>我的担保</view>
     </view>
   </view>
-  <view class='myCredit' bindtap='gotoMyCredit'>
+  <view class='myCredit'>
       <image class='icon' src='../../images/me/icon01.png'></image>
       <view class='right'>
         <text class='weight'>我的信用分</text>
@@ -76,6 +76,7 @@
      <image class='icon' src='../../images/me/kefu.png'></image>
       <view class='right'>
         <text class='weight'>联系客服</text>
+        <button class='kefu-btn' hover-class="none" open-type="contact"></button>
         <image class='move' src='../../images/me/move-r.png'></image>
       </view>
   </view>

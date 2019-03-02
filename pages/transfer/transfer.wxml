@@ -1,9 +1,12 @@
 <!-- 调货中页面 -->
 <view class='pages'>
-  <view class='header'>
+   <view class='header'>
+    <image src='../../images/home/search.png'></image>
     <view class='search'>
-      <image src='../../images/home/search.png'></image>
-      <text>请输入货号或者名称搜索</text>
+      <input placeholder='输入单号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
+      <view class='closeBox'>
+        <image wx:if='{{value !=""}}' src='../../images/close.png' bindtap='close'></image>
+      </view>
     </view>
   </view>
   <view class='content'>
@@ -12,7 +15,7 @@
         <view class='top'>
           <view class='goods-Id'>
             <view>订单编号：123567895265962</view>
-            <view class='copy'>复制</view>
+            <view class='copy' bindtap='copy'>复制</view>
           </view>
           <view class='status'>已完成</view>
         </view>

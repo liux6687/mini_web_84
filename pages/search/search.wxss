@@ -18,6 +18,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.header .search input {
+  width: 100%;
+}
 .header .submit {
   height: 90rpx;
   line-height: 90rpx;

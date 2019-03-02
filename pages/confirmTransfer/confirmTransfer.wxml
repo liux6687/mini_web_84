@@ -1,4 +1,5 @@
 <!-- 确认调货页 -->
+<wxs src="../../utils/toNum.wxs" module="tools" />
 <view class='pages'>
   <view class='header'>
     <view class='img-box'>
@@ -6,11 +7,11 @@
     </view>
     <view class='right'>
       <view class='h1'>
-        <text>(DHFKHFKHKK KDHFKJHDKFJ) FGJKLGK JFGKJG KDJFKJF DJFKJFDK</text>
+        <text>{{goods.name}}</text>
       </view>
       <view class='Id'>
-        <text>ID:123456789</text>
-        <text>尺寸：42.5</text>
+        <text>货号：{{goods.item_no}}</text>
+        <text>尺寸：{{goodsInfo.size}}</text>
       </view>
     </view>
   </view>
@@ -40,28 +41,28 @@
         <view class='title weight'>本次收入</view>
         <view class='h1 weight'>
           <view class='money'>
-            <text>3289</text>
+            <text>{{goodsInfo.deliver_amount}}</text>
             元
           </view>
           <view class='zf'>
-            需支付保证金 <text>80</text> 元
+            需支付保证金 <text>{{goodsInfo.deliver_amount * goodsInfo.penalty_scale}}</text> 元
           </view>
         </view>
       </view>
       <view class='main'>
         <view class='main-left'>
           <view class='main-title'>当前剩余保证金（元）</view>
-          <view class='main-num'>2000</view>
+          <view class='main-num'>{{current_store_money}}</view>
         </view>
         <view class='main-right'>
           <view class='main-title'>银行转账费0.5%（元）</view>
-          <view class='main-num'>-10</view>
+          <view class='main-num'>-{{tools.toNum(goodsInfo.deliver_amount) * tools.toNum(goodsInfo.service_fee_scale)}}</view>
         </view>
       </view>
       <view class='bottom'>
         <view class='h1'>实际收入</view>
         <view class='result'>
-          <view>3279 <text>元</text></view>
+          <view>{{goodsInfo.deliver_amount - goodsInfo.deliver_amount * goodsInfo.service_fee_scale}} <text>元</text></view>
         </view>
       </view>
     </view>

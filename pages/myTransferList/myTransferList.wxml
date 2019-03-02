@@ -2,7 +2,7 @@
 <view class='myTransferList'>
   <view class='header'>
     <view class='header-left' bindtap='showModel'>
-      <text class='selected'>全部订单</text>
+      <text class='selected'>{{item}}</text>
       <image src='../../images/me/myTransferList/down.png'></image>
     </view>
     <view class='header-right'>
@@ -12,31 +12,39 @@
       </view>
       <view class='share'>
         <image src='../../images/me/myTransferList/share.png'></image>
-        <text>分享</text>
+        <button open-type="share">分享</button>
       </view>
     </view>
   </view>
   <!-- 商品列表 -->
   <view class='goodsList'>
-    <view class='card'>
+    <view class='card' wx:for="{{goodsList}}" wx:key="{{index}}">
       <view class='cardTitle'>
-        <text class='h1'>订单编号：123456789123456</text>
-        <text class='copy'>复制</text>
+        <text class='h1'>订单编号：{{item.raw_tid}}</text>
+        <text data-index='{{index}}' class='copy' bindtap='copy'>复制</text>
       </view>
       <view class='cardContent'>
-        <view class='firstCard'>
-          <view class='goodsDetails'>
-            <view class='goodsDetails-top clearfix'>
-              <view class='goodsImg'>
-                <image src='../../images/123.png'></image>
+        <view class='goodsDetails'>
+          <view class='goodsDetails-top clearfix'>
+            <view class='goodsImg'>
+              <image src='{{item.raw_pic_path}}'></image>
+            </view>
+            <view class='goodsDetails-right'>
+              <view class='title'>
+                <view class='h1 weight'>{{item.raw_title}}</view>
               </view>
-              <view class='goodsDetails-right'>
-                <view class='title'>
-                  <view class='h1 weight'>LIHJLFJfkjjjjjjdfjjjjjjjjjjjjjjjjjjjjjjjjjGLJKFGLK;GKF;LLgfkjhkhFFKL</view>
+              <view class='right-bottom'>
+                <view class='item-info'>
+                  <view class='info' wx:if="{{item.color != null}}">
+                    <view>颜色：</view>
+                    <scroll-view scroll-x="true" class='color'>
+                      <view>{{item.color == null? "":item.color}}</view>
+                    </scroll-view> 
+                  </view>
+                  <view class='size' wx:if="{{item.size != null}}">尺寸：{{item.size == null ? "": item.size}}</view>
                 </view>
-                <view class='right-bottom'>
-                  <view><text class='color'>白色</text><text>40</text></view>
-                  <view class='price'><text style='font-size: 18rpx;'>￥</text><text class='weight'>2389</text></view>
+                <view class='price'>
+                  <text style='font-size: 18rpx;'>￥</text><text class='weight'>{{item.raw_payment}}</text>
                 </view>
               </view>
             </view>
@@ -44,38 +52,16 @@
         </view>
       </view>
       <view class='cardFooter'>
-        <view class='active'>修改调货价格</view>
-        <view>同步订单信息</view>
-        <view>开始调货</view>
+        <view wx:for="{{item.buttons}}" bindtap='btnClick' wx:key="{{idx}}" wx:for-index="idx" wx:for-item="itm" data-index='{{index}}' data-id='{{itm.id}}'>{{itm.name}}</view>
       </view>
     </view>
   </view>
 
   <view class='model' wx:if="{{modelShow}}">
     <view class='model-main'>
-      <view class='items select'>
-        <text class='weight'>全部订单</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
-      </view>
-       <view class='items'>
-        <text class='weight'>等待调货</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
-      </view>
-       <view class='items'>
-        <text class='weight'>正在调货</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
-      </view>
-       <view class='items'>
-        <text class='weight'>代发货</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
-      </view>
-       <view class='items'>
-        <text class='weight'>已发货</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
-      </view>
-       <view class='items'>
-        <text class='weight'>已完成</text>
-        <image src='../../images/me/myTransferList/yes.png'></image>
+      <view class='items {{status == index? "select": ""}}' bindtap='click' wx:for="{{statusArr}}" data-item='{{item}}' data-index='{{index}}' wx:key="{{index}}">
+        <text class='weight'>{{item}}</text>
+        <image wx:if="{{status == index}}" src='../../images/me/myTransferList/yes.png'></image>
       </view>
     </view>
   </view>

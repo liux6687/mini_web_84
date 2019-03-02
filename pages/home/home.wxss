@@ -29,6 +29,7 @@
 .main {
   margin: 0 auto;
   width: 742rpx;
+  box-sizing: border-box;
   position: absolute;
   top: 38rpx;
   padding: 0 32rpx;

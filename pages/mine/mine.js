@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    loginData: null,//登录信息
+    loginUserInfo: null// 微信用户信息
   },
 
   /**
@@ -14,7 +15,27 @@ Page({
   onLoad: function (options) {
 
   },
-
+  weChat(e) {
+    var that = this;
+    wx.login({
+      success: function(res) {
+        if(res.code) {
+          var loginData = res;
+          that.setData({
+            loginData: loginData
+          })
+          wx.getUserInfo({
+            success:function(res1) {
+              that.setData({
+                loginUserInfo: res1
+              })
+              
+            }
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

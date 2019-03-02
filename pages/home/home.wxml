@@ -1,6 +1,45 @@
 <view class="home">
-  <!-- 信用分不足 -->
-  <view class='credit-lack'>
+
+  <!-- 信用分充足 -->
+  <view class='credit-ample' wx:if="{{userInfo.store.credit != 10}}">
+    <view class='credit-ample-top'>
+      <!-- 守则 -->
+      <view class='relus' bindtap='gotoRElus'>
+        <image class='bg' src='../../images/home/bg.png'></image>
+        <image class='text-img' src='../../images/home/text-img.png'></image>
+        <view class='text'>
+          <text>点击查看</text>
+          <image class='move-right' src='../../images/home/move-right.png'></image>
+        </view>
+      </view>
+      <!-- 搜索 -->
+      <view class='search'>
+        <view class='search-content' bindtap='gotoSearch'>
+          <image class='search-icon' src='../../images/home/search.png'></image>
+          <text>请输入货号或者名称搜索</text>
+        </view>
+      </view>
+    </view>
+    <view class='goods-list clearfix'>
+
+      <view class='listItem' bindtap='gotoGoodsInfo' wx:for="{{goodsList}}" data-index='{{index}}' wx:key="{{index}}">
+        <view class='imgBox'>
+          <image src='{{item.cover_image}}'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='info-top'>{{item.name}}</view>
+          <view class='info-bottom'>
+            <view class='price'><text style="font-size: 20rpx;">￥</text>{{item.max}}</view>
+            <view class='people-num noWeight'>{{item.count}}人求货</view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+    <!-- 信用分不足 -->
+  <view class='credit-lack' wx:else>
     <view class='header'>
       <image class='h-bg' src='../../images/home-bg.png'></image>
       <view class='header-top'>
@@ -16,14 +55,14 @@
           <view class='Id'>
             <image src='../../images/ID-icon.png'></image>
             <view class='Id-right'>
-              <view class='weight'>123456789</view>
+              <view class='weight'>{{userInfo.id}}</view>
               <view class='text'>您的ID</view>
             </view>
           </view>
           <view class='credit-num'>
             <image src='../../images/jf.png'></image>
             <view class='credit-num-right'>
-              <view class='weight'>0分</view>
+              <view class='weight'>{{userInfo.store.credit}}分</view>
               <view class='text'>目前信用分</view>
             </view>
           </view>
@@ -164,69 +203,6 @@
           </view>
         </view>
         <view class='footer'></view>
-    </view>
-  </view>
-  <!-- 信用分充足 -->
-  <view class='credit-ample' wx:if="{{true}}">
-    <view class='credit-ample-top'>
-      <!-- 守则 -->
-      <view class='relus' bindtap='gotoRElus'>
-        <image class='bg' src='../../images/home/bg.png'></image>
-        <image class='text-img' src='../../images/home/text-img.png'></image>
-        <view class='text'>
-          <text>点击查看</text>
-          <image class='move-right' src='../../images/home/move-right.png'></image>
-        </view>
-      </view>
-      <!-- 搜索 -->
-      <view class='search'>
-        <view class='search-content' bindtap='gotoSearch'>
-          <image class='search-icon' src='../../images/home/search.png'></image>
-          <text>请输入货号或者名称搜索</text>
-        </view>
-      </view>
-    </view>
-    <view class='goods-list clearfix'>
-      <view class='listItem' bindtap='gotoGoodsInfo'>
-        <view class='imgBox'>
-          <image src='../../images/123.png'></image>
-        </view>
-        <view class='goods-info'>
-          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
-          <view class='info-bottom'>
-            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
-            <view class='people-num noWeight'>2091人求货</view>
-          </view>
-        </view>
-      </view>
-
-
-      <view class='listItem'>
-        <view class='imgBox'>
-          <image src='../../images/123.png'></image>
-        </view>
-        <view class='goods-info'>
-          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
-          <view class='info-bottom'>
-            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
-            <view class='people-num noWeight'>2091人求货</view>
-          </view>
-        </view>
-      </view>
-
-      <view class='listItem'>
-        <view class='imgBox'>
-          <image src='../../images/123.png'></image>
-        </view>
-        <view class='goods-info'>
-          <view class='info-top'>刚发来发来给客服来看管理费等凉快凉快点了点了客服经理看过来看</view>
-          <view class='info-bottom'>
-            <view class='price'><text style="font-size: 20rpx;">￥</text>1399</view>
-            <view class='people-num noWeight'>2091人求货</view>
-          </view>
-        </view>
-      </view>
-      
     </view>
   </view>
 </view>
