@@ -77,6 +77,7 @@ Page({
           token
         },
         success(res) {
+          console.log(res)
           if(res.data.status == 200) {
             let arr = res.data.data;
             for(let i = 0; i < arr.length; i++) {
@@ -141,7 +142,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    let shareObj = app.shareFunction(options);
+    return shareObj;
   }
 })

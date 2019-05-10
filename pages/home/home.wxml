@@ -1,7 +1,9 @@
 <view class="home">
-
+  <view class='loading' wx:if="{{loadModel}}">
+    <view>正在加载 。。。</view>
+  </view>
   <!-- 信用分充足 -->
-  <view class='credit-ample' wx:if="{{userInfo.store.credit != 10}}">
+  <view class='credit-ample' wx:if="{{userInfo.store_info.credit >= 1}}">
     <view class='credit-ample-top'>
       <!-- 守则 -->
       <view class='relus' bindtap='gotoRElus'>
@@ -15,26 +17,30 @@
       <!-- 搜索 -->
       <view class='search'>
         <view class='search-content' bindtap='gotoSearch'>
-          <image class='search-icon' src='../../images/home/search.png'></image>
+          <!-- <image class='search-icon' src='../../images/home/search.png'></image> -->
           <text>请输入货号或者名称搜索</text>
         </view>
       </view>
     </view>
     <view class='goods-list clearfix'>
-
       <view class='listItem' bindtap='gotoGoodsInfo' wx:for="{{goodsList}}" data-index='{{index}}' wx:key="{{index}}">
         <view class='imgBox'>
-          <image src='{{item.cover_image}}'></image>
+          <image mode="widthFix" src='{{item.cover_image}}'></image>
         </view>
         <view class='goods-info'>
-          <view class='info-top'>{{item.name}}</view>
+          <view class='info-top'>{{item.trade_name}}</view>
           <view class='info-bottom'>
             <view class='price'><text style="font-size: 20rpx;">￥</text>{{item.max}}</view>
             <view class='people-num noWeight'>{{item.count}}人求货</view>
           </view>
         </view>
       </view>
-      
+    </view>
+    <view class='no-list' wx:if="{{goodsList.length == 0}}">
+      <view class='img-box'>
+        <image src='../../images/no/no-list.png'></image>
+      </view>
+      <view class='text'>暂无商品</view>
     </view>
   </view>
 
@@ -55,14 +61,14 @@
           <view class='Id'>
             <image src='../../images/ID-icon.png'></image>
             <view class='Id-right'>
-              <view class='weight'>{{userInfo.id}}</view>
+              <view class='weight'>{{userInfo.store.unique_id}}</view>
               <view class='text'>您的ID</view>
             </view>
           </view>
           <view class='credit-num'>
             <image src='../../images/jf.png'></image>
             <view class='credit-num-right'>
-              <view class='weight'>{{userInfo.store.credit}}分</view>
+              <view class='weight'>{{userInfo.store == null?"0":userInfo.store_info.credit}}分</view>
               <view class='text'>目前信用分</view>
             </view>
           </view>

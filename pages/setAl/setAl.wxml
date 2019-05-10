@@ -13,7 +13,7 @@
     <view class='items'>
       <view class='h1'>验证码</view>
       <view class='input-box'>
-        <input type="number" bindinput='code' placeholder='请输入收到的验证码'></input>
+        <input type="number" bindinput='code' disabled='{{disabled == 1?true:false}}' placeholder='请输入收到的验证码'></input>
       </view>
       <view class='btn-box' bindtap='getCode'>
         <view class='get-code'>{{textStatus == 0? "获取验证码": "剩余" + num + "(s)"}}</view>

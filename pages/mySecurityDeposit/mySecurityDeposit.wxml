@@ -2,12 +2,12 @@
   <view class='header'>
     <view class='header-content'>
       <view class='title'>保证金(元)</view>
-      <view class='mySecurityDeposit'>5000</view>
+      <view class='mySecurityDeposit'>{{extra.money}}</view>
       <view class='ellipse'>
         <image src='../../images/me/mySecurityDeposit/ellipse.png'></image>
       </view>
       <view class='freeze'>
-        <text class='freeze-num'>冻结￥2000</text>、
+        <text class='freeze-num'>冻结￥{{extra.blocked_money}}</text>、
         <view class='look-info'>
           <text bindtap='gotoLooK'>查看详细</text>
           <image src="../../images/me/mySecurityDeposit/move-r.png"></image>
@@ -29,37 +29,27 @@
     </view>
   </view>
   <view class='list'>
-    <view class='items'>
-      <view class='items-content NOline'>
-        <view class='left'>
-          <view class='h1'>
-            <text>疯狂过后客户</text>
-          </view>
-          <text class='time'>2019-02-19 12：36:20</text>
-        </view>
-        <view class='right'>
-          <view class='h1'>
-            <text>调货成功</text>
-          </view>
-          <text class='money'>-1800</text>
-        </view>
-      </view>
-    </view>
-    <view class='items'>
+    <view class='items' wx:for="{{data}}" wx:key="{{index}}">
       <view class='items-content'>
         <view class='left'>
           <view class='h1'>
-            <text>缴纳保证金</text>
+            <text>{{item.remark}}</text>
           </view>
-          <text class='time'>2019-02-19 12：36:20</text>
+          <text class='time'>{{item.created_at}}</text>
         </view>
         <view class='right'>
           <view class='h1'>
-            <text>调货成功</text>
+            <!-- <text>调货成功</text> -->
           </view>
-          <text class='money'>-1800</text>
+          <text class='money'>{{item.change_money}}</text>
         </view>
       </view>
+    </view>
+    <view class='no-list' wx:if="{{data.length == 0}}">
+      <view class='img-box'>
+        <image src='../../images/no/no-money.png'></image>
+      </view>
+      <view class='text'>暂无记录</view>
     </view>
   </view>
 </view>
@@ -69,13 +59,11 @@
   <view class='model' wx:if="{{modelShow == 1}}">
     <view class='model-box'>
       <view class='model-title'>
-        <text>缴纳保证金</text>
+        <text>扫码缴纳保证金</text>
       </view>
       <view class='model-content'>
-        <view class='input-box1'>
-          <text class='text'>￥</text>
-          <input type='number' placeholder='请输入金额数' ></input>
-          <text class='text'>00</text>
+        <view class='ali-code'>
+          <image src='/images/123.png'></image>
         </view>
       </view>
       <view class='model-fooder'>
@@ -95,7 +83,7 @@
       <view class='model-content'>
         <view class='input-box'>
           <text class='text'>￥</text>
-          <input type='number' placeholder='请输入金额数' ></input>
+          <input type='digit' bindinput='getValue' placeholder='请输入金额数' ></input>
         </view>
       </view>
       <view class='model-fooder'>

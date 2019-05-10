@@ -35,9 +35,7 @@
 
 /* 收货地址 */
 .orderInfo .goodsDetails .address {
-  border-top: 1rpx solid #f5f4f9;
   margin-top: 24rpx;
-  padding-top: 24rpx;
   line-height: 24rpx;
 }
 .orderInfo .goodsDetails .address .address-title {
@@ -50,10 +48,13 @@
   height: 24rpx;
   margin-left: 10rpx;
 }
- .addressInfo {
+ .addressInfo .name,.addressInfo .mobile,.addressInfo .address {
    margin-top: 30rpx;
    display: flex;
    justify-content: space-between;
+ }
+ .addressInfo .copy-box {
+   flex: 0 0 80rpx;
  }
  /* 供货商信息 */
 .orderInfo .supplierInfo {
@@ -191,6 +192,10 @@
   border-radius: 10rpx;
   overflow: hidden;
   margin-right: 20rpx;
+  line-height: 200rpx;
+}
+.order-footer .imgBox image {
+  vertical-align: middle;
 }
 .order-footer .imgBox .bottomText {
   position: absolute;

@@ -11,39 +11,64 @@ Page({
     model2: false,
     model3: false,
     model4: false,
+    isLock: "",
     see_demand_way_arr: ["允许任何人查看", "仅允许完成平台验证的用户查看","仅允许您担保的用户查看"],
     can_deliver_way_arr: ["所有查看清单的用户","您担保的用户"],
     see_demand_way_text: "允许任何人查看",
     can_deliver_way_text: "所有查看清单的用户",
+    profit_Pattern: ["按固定值计算", "按百分比计算"],
     moneyValue: "100", //固定利润VALUE
     percentValue: "5", //百分比value
     see_demand_way: 0, //查看您的调货列表索引
-    can_deliver_way: 0 //为您调货索引
+    can_deliver_way: 0, //为您调货索引
+    profit_Pattern_index: 0 //利润计算方式索引值
   },
   // 提交
   submit() {
-    var that = this;
-    var { moneyValue, percentValue, see_demand_way, can_deliver_way} = that.data;
-    app.isToken(function goNext(token){
-      wx.request({
-        url: app.globalData.apiURL + '/api/store/setup',
-        method: "PUT",
-        data: {
-          token,
-          fixed: moneyValue,
-          percentage: percentValue / 100,
-          see_demand_way,
-          can_deliver_way
-        },
-        success(res) {
-          if (res.data.status == 201) {
-            wx.navigateBack({
-              delta: 1
-            })
-          }
-        }
+    let that = this;
+    let { isLock, moneyValue, percentValue, see_demand_way, can_deliver_way, profit_Pattern_index} = that.data;
+    if (isLock == true) {
+      that.setData({
+        isLock: false
       })
-    })
+      app.isToken(function goNext(token) {
+        wx.request({
+          url: app.globalData.apiURL + '/api/store/setting',
+          method: "PUT",
+          data: {
+            token,
+            fixed: moneyValue,
+            percentage: percentValue / 100,
+            see_demand_way,
+            can_deliver_way,
+            auto_calculation_type: profit_Pattern_index
+          },
+          success(res) {
+            console.log(res)
+            if (res.data.status == 201) {
+              wx.request({
+                url: 'https://cwa.tosneaker.com/api/user?token=' + token,
+                success: function (res) {
+                  var userInfo = res.data.data;
+                  that.setData({
+                    userInfo
+                  })
+                  wx.setStorageSync("userInfo", userInfo)
+                }
+              })
+              wx.navigateBack({
+                delta: 1
+              })
+            } else {
+              wx.showToast({
+                title: "设置失败",
+                icon: "none"
+              })
+            }
+          }
+        })
+      })
+    }
   },
   // 查看列表选择
   see_demand_way_select(e) {
@@ -120,14 +145,26 @@ Page({
       })
     }
   },
+  // 选择利润计算方式
+  bindPickerChange(e) {
+    let that = this;
+    let index = e.detail.value;
+    this.setData({
+      profit_Pattern_index: index
+    })
+  },
   //  * 生命周期函数--监听页面加载*/
   onLoad: function (options) {
     let userInfo = wx.getStorageSync("userInfo");
-    console.log(userInfo)
     this.setData({
-      moneyValue: userInfo.store.fixed, //固定利润VALUE
-      percentValue: userInfo.store.percentage * 100, //百分比value
-      userInfo
+      moneyValue: userInfo.store_info.fixed, //固定利润VALUE
+      percentValue: userInfo.store_info.percentage * 100, //百分比value
+      userInfo,
+      see_demand_way_text: this.data.see_demand_way_arr[userInfo.store_info.see_demand_way],
+      can_deliver_way_text: this.data.can_deliver_way_arr[userInfo.store_info.can_deliver_way],
+      see_demand_way: userInfo.store_info.see_demand_way,
+      can_deliver_way: userInfo.store_info.can_deliver_way,
+      profit_Pattern_index: userInfo.store_info.auto_calculation_type
     })
   },
 
@@ -142,7 +179,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      this.setData({
+        isLock: true
+      })
   },
 
   /**
@@ -176,7 +215,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    let shareObj = app.shareFunction(options);
+    return shareObj;
   }
 })

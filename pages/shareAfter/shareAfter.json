@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "店铺调货单",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

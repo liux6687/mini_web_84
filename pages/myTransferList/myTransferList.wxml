@@ -10,9 +10,9 @@
         <image src='../../images/me/myTransferList/set.png'></image>
         <text>设置</text>
       </view>
-      <view class='share'>
-        <image src='../../images/me/myTransferList/share.png'></image>
-        <button open-type="share">分享</button>
+      <view class='share' bindtap='shareModel'>
+          <image src='../../images/me/myTransferList/share.png'></image>
+          <text>分享</text>
       </view>
     </view>
   </view>
@@ -36,12 +36,9 @@
               <view class='right-bottom'>
                 <view class='item-info'>
                   <view class='info' wx:if="{{item.color != null}}">
-                    <view>颜色：</view>
-                    <scroll-view scroll-x="true" class='color'>
-                      <view>{{item.color == null? "":item.color}}</view>
-                    </scroll-view> 
+                      <view>颜色分类：{{item.color == null? "":item.color}}</view>
                   </view>
-                  <view class='size' wx:if="{{item.size != null}}">尺寸：{{item.size == null ? "": item.size}}</view>
+                  <view class='size' wx:if="{{item.size != null}}">鞋码：{{item.size == null ? "": item.size}}</view>
                 </view>
                 <view class='price'>
                   <text style='font-size: 18rpx;'>￥</text><text class='weight'>{{item.raw_payment}}</text>
@@ -52,16 +49,54 @@
         </view>
       </view>
       <view class='cardFooter'>
-        <view wx:for="{{item.buttons}}" bindtap='btnClick' wx:key="{{idx}}" wx:for-index="idx" wx:for-item="itm" data-index='{{index}}' data-id='{{itm.id}}'>{{itm.name}}</view>
+        <view wx:for="{{item.buttons}}" bindtap='btnClick' wx:key="{{idx}}" wx:for-index="idx" wx:for-item="itm" data-index='{{index}}' data-id='{{itm.button_type}}'>{{itm.name}}</view>
       </view>
     </view>
   </view>
-
+  <!-- 没有商品 -->
+  <view class='no-list' wx:if="{{goodsList.length == 0}}">
+    <view class='img-box'>
+      <image src='../../images/no/no-list.png'></image>
+    </view>
+    <view class='text'>您还没有任何调货单</view>
+  </view>
+  <!-- 弹出框 -->
   <view class='model' wx:if="{{modelShow}}">
     <view class='model-main'>
       <view class='items {{status == index? "select": ""}}' bindtap='click' wx:for="{{statusArr}}" data-item='{{item}}' data-index='{{index}}' wx:key="{{index}}">
         <text class='weight'>{{item}}</text>
         <image wx:if="{{status == index}}" src='../../images/me/myTransferList/yes.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='shareModel' wx:if="{{shareModel}}">
+    <view class='shareModel-main'>
+      <view class='top'>
+        <view class='left'>
+          <button open-type="share" hover-class='none'></button>
+          <image src='../../images/wx.png'></image>
+          <text>分享给好友</text>
+        </view>
+        <view class='right' bindtap='make_img'>
+          <image src='../../images/fq.png'></image>
+          <text>生成图片</text>
+        </view>
+      </view>
+      <view class='bottom' bindtap='no_share'>关闭</view>
+    </view>
+  </view>
+
+
+
+  
+  <view class='share_img_box' wx:if="{{isImgShow}}">
+    <scroll-view scroll-y="true" class='img_box'>
+      <image src='https://cwa.tosneaker.com/m/screenshot/images/ + {{imgURL}}'></image>
+    </scroll-view>
+    <view class='footer'>
+      <view class='btn-box'>
+        <view class='close' bindtap='close_img'>关闭</view>
+        <view data-src='/images/shareAfter.png' bindtap='down' class='down'>保存到本地</view>
       </view>
     </view>
   </view>

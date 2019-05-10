@@ -1,6 +1,13 @@
 var toNum = function (str) {
   return Number(str)
 }
+var filters = {
+  toFix: function (value) {
+    value = Number(value)
+    return value.toFixed(2)
+  }
+}
 module.exports = {
-  toNum: toNum
+  toNum: toNum,
+  toFix: filters.toFix
 }

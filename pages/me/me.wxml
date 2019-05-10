@@ -4,21 +4,38 @@
     <view class='user'>
       <view class='userInfo'>
         <view class='portrait'>
-          <image src='../../images/123.png'></image>
+          <image src='{{user_info.avatar}}'></image>
         </view>
         <view class='userInfo-right'>
-          <view class='h1'>用户名称</view>
+          <view class='h1'>{{user_info.name}}</view>
           <view class='Id'>
             <image src='../../images/me/ID.png'></image>
-            <view class='Id-text'>123456789</view>
+            <view class='Id-text'>{{store_info.unique_id}}</view>
           </view>
         </view>
       </view>
-      <view class='again-login' bindtap='gotoMine'>
-        <view>重新获取</view>
+      <view class='again-login'>
+        <button open-type='getUserInfo' disabled="{{disabled}}" class='weChat' bindgetuserinfo='weChat'>重新获取</button>
         <image src='../../images/me/load.png'></image>
       </view>
     </view> 
+    <view class='mys'>
+      <view class='myService' bindtap='gotoMyService'>
+        <view class='num'>{{store_info.service_count}}</view>
+        <view>我的服务</view>
+      </view>
+      <view class='myTransferList' bindtap='gotoMyTransferList'>
+        <view class='num'>{{store_info.order_count}}</view>
+        <view>我的调货单</view>
+      </view>
+      <view class='myGuarantee' bindtap='gotoMyGuarantee'>
+        <view class='num'>{{store_info.guarantee_count}}</view>
+        <view>我的担保</view>
+      </view>
+    </view>
+   
+  </view>
+  <view class='content'>
     <!-- 店铺信息 -->
     <view class='shop'>
       <view class='shopInfo'>
@@ -27,57 +44,62 @@
           <image src='../../images/me/shop.png'></image>
         </view>
         <view class='shop-right'>
-          <view class='h1'>兄弟体育</view>
+          <view class='h1'>{{store_info.store_name}}</view>
           <view class='imgList'>
-            <image src='../../images/123.png'></image>
-            <image src='../../images/123.png'></image>
-            <image src='../../images/123.png'></image>
+            <block wx:if="{{lvNum == 0}}">
+              <view>暂无等级</view>
+            </block>
+            <block wx:elif="{{4 <= taobao_score && taobao_score <= 250}}">
+              <image  wx:for="{{lvNum}}" wx:key="{{index}}" src='../../images/lv/lv1.png'></image>
+            </block>
+            <block wx:elif="{{251 <= taobao_score && taobao_score <= 10000 }}">
+              <image  wx:for="{{lvNum}}" wx:key="{{index}}" src='../../images/lv/lv2.png'></image>
+            </block>
+            <block wx:elif="{{10001 <= taobao_score && taobao_score <= 500000 }}">
+              <image wx:for="{{lvNum}}" wx:key="{{index}}" src='../../images/lv/lv3.png'></image>
+            </block>
+            <block wx:elif="{{500001 <= taobao_score && taobao_score <= 10000000 }}">
+              <image  wx:for="{{lvNum}}" wx:key="{{index}}" src='../../images/lv/lv4.png'></image>
+            </block>
+            <block wx:else>
+              <image  wx:for="{{lvNum}}" wx:key="{{index}}" src='../../images/lv/lv4.png'></image>
+            </block>
           </view>
         </view>
       </view>
-    </view>
-  </view>
-  <view class='mys'>
-    <view class='myService' bindtap='gotoMyService'>
-      <view class='num'>2</view>
-      <view>我的服务</view>
-    </view>
-    <view class='myTransferList' bindtap='gotoMyTransferList'>
-      <view class='num'>2</view>
-      <view>我的调货单</view>
-    </view>
-    <view class='myGuarantee' bindtap='gotoMyGuarantee'>
-      <view class='num'>2</view>
-      <view>我的担保</view>
-    </view>
-  </view>
-  <view class='myCredit'>
-      <image class='icon' src='../../images/me/icon01.png'></image>
-      <view class='right'>
-        <text class='weight'>我的信用分</text>
-        <text>10分</text>
+      <view class='shop-home' bindtap='gotoShopHome'>
+        <text>店铺首页</text>
+         <image src='/images/r-move-b.png'></image>
       </view>
-  </view>
-  <view class='mySecurityDeposit' bindtap='gotoMySecurityDeposit'>
-    <image class='icon' src='../../images/me/icon02.png'></image>
-    <view class='right'>
-      <text class='weight'>我的保证金</text>
-      <text>10分</text>
     </view>
-  </view>
-  <view class='myWallet' bindtap='gotoMyWallet'>
-    <image class='icon' src='../../images/me/icon03.png'></image>
-    <view class='right'>
-      <text class='weight'>我的钱包</text>
-      <text>10分</text>
+    <view class='myCredit'>
+        <image class='icon' src='../../images/me/icon01.png'></image>
+        <view class='right'>
+          <text class='weight'>我的信用分</text>
+          <text>{{store_info.credit}}分</text>
+        </view>
     </view>
-  </view>
-  <view class='kefu'>
-     <image class='icon' src='../../images/me/kefu.png'></image>
+    <view class='mySecurityDeposit' bindtap='gotoMySecurityDeposit'>
+      <image class='icon' src='../../images/me/icon02.png'></image>
       <view class='right'>
-        <text class='weight'>联系客服</text>
-        <button class='kefu-btn' hover-class="none" open-type="contact"></button>
+        <text class='weight'>我的保证金</text>
         <image class='move' src='../../images/me/move-r.png'></image>
       </view>
+    </view>
+    <view class='myWallet' bindtap='gotoMyWallet'>
+      <image class='icon' src='../../images/me/icon03.png'></image>
+      <view class='right'>
+        <text class='weight'>我的钱包</text>
+        <image class='move' src='../../images/me/move-r.png'></image>
+      </view>
+    </view>
+    <view class='kefu'>
+      <image class='icon' src='../../images/me/kefu.png'></image>
+        <view class='right'>
+          <text class='weight'>联系客服</text>
+          <button class='kefu-btn' hover-class="none" open-type="contact"></button>
+          <image class='move' src='../../images/me/move-r.png'></image>
+        </view>
+    </view>
   </view>
 </view> 

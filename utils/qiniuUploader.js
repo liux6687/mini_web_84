@@ -9,12 +9,10 @@ var config = {
     qiniuUploadTokenFunction: null,
     qiniuShouldUseQiniuFileName: false
 }
-
 module.exports = {
     init: init,
     upload: upload,
 }
-
 // 在整个程序生命周期中，只需要 init 一次即可
 // 如果需要变更参数，再调用 init 即可
 function init(options) {

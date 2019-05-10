@@ -110,6 +110,10 @@
   margin-right: 18rpx;
   border-radius: 10rpx;
   overflow: hidden;
+  line-height: 200rpx;
+}
+.upload-items .upload-img {
+  vertical-align: middle;
 }
 .no-upload {
   display: flex;
@@ -148,4 +152,9 @@
   font-weight: bold;
   font-size: 30rpx;
   border-radius: 10rpx;
+}
+.companyName {
+  color: #7b7d80;
+  height: 60rpx;
+  line-height: 60rpx;
 }

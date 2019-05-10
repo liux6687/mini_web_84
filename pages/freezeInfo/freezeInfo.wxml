@@ -1,51 +1,25 @@
 <!-- 冻结明细页 -->
 <view class='list'>
-  <view class='items'>
-    <view class='items-content NOline'>
-      <view class='left'>
-        <view class='h1'>
-          <text>疯狂过后客户</text>
-        </view>
-        <text class='time'>2019-02-19 12：36:20</text>
-      </view>
-      <view class='right'>
-        <view class='h1'>
-          <text class='money'>￥1800</text>
-        </view>
-          <text class='status'>当前状态：押金冻结</text>
-      </view>
-    </view>
-  </view>
-   <view class='items'>
+  <view class='items' wx:for="{{data}}" wx:key="{{index}}">
     <view class='items-content'>
       <view class='left'>
         <view class='h1'>
-          <text>疯狂过后客户</text>
+          <text>订单编号：{{item.record_sn}}</text>
         </view>
-        <text class='time'>2019-02-19 12：36:20</text>
+        <text class='time'>{{item.created_at}}</text>
       </view>
       <view class='right'>
         <view class='h1'>
-          <text class='money'>￥1800</text>
+          <text class='money'>￥{{item.change_money}}</text>
         </view>
-          <text class='status'>当前状态：押金冻结</text>
+          <text class='status'>当前状态：{{item.remark}}</text>
       </view>
     </view>
   </view>
-   <view class='items'>
-    <view class='items-content'>
-      <view class='left'>
-        <view class='h1'>
-          <text>疯狂过后客户</text>
-        </view>
-        <text class='time'>2019-02-19 12：36:20</text>
-      </view>
-      <view class='right'>
-        <view class='h1'>
-          <text class='money'>￥1800</text>
-        </view>
-          <text class='status'>当前状态：押金冻结</text>
-      </view>
+  <view class='no-list' wx:if="{{data.length == 0}}">
+    <view class='img-box'>
+      <image src='/images/no/no-pingjia.png'></image>
     </view>
+    <view class='text'>暂无数据</view>
   </view>
 </view>

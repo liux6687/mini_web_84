@@ -2,11 +2,11 @@
 <view class='goodsInfo'>
  <view class='header'>
   <view class='img-box'>
-    <image src='{{goods.cover_image}}'></image>
+    <image mode='widthFix' src='{{goods.cover_image}}'></image>
   </view>
   <view class='right'>
     <view class='h1'>
-      <text>{{goods.name}}</text>
+      <text>{{goods.trade_name}}</text>
     </view>
     <view class='Id'>
       <text>货号{{goods.item_no}}</text>

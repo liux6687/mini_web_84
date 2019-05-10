@@ -1,4 +1,16 @@
 /* 不足 */
+.home {
+  position: relative;
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #666;
+  z-index: 999;
+}
 .home .credit-lack .credit-Rules {
   padding: 0 32rpx;
 }
@@ -150,6 +162,7 @@
 }
 /* 足够 */
 .credit-ample {
+  position: relative;
 }
 .credit-ample .credit-ample-top {
   background: #fff;
@@ -207,7 +220,7 @@
 }
 
 .credit-ample .goods-list .listItem {
-  width: 342rpx; 
+  width: 340rpx; 
   border-radius: 10rpx;
   overflow: hidden;
   margin-bottom: 24rpx;
@@ -219,7 +232,12 @@
   float: right
 }
 .credit-ample .goods-list .listItem .imgBox {
+  background: #fff;
   height: 340rpx;
+  line-height: 340rpx;
+}
+.credit-ample .goods-list .listItem .imgBox image {
+  vertical-align: middle;
 }
 .credit-ample .goods-info {
   background: #fff;
@@ -232,6 +250,11 @@
   overflow: hidden;
   margin-bottom: 30rpx;
   line-height: 1;
+	font-family: PingFangSC-Medium;
+	font-size: 24rpx;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
 }
 .credit-ample .goods-info .info-bottom {
   display: flex;
@@ -239,3 +262,24 @@
   justify-content: space-between;
   margin-bottom: 16rpx;
 }
+/* 没有商品 */
+.no-list {
+  width: 100%;
+  position: fixed;
+  top: 45%;
+  text-align: center;
+
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 167rpx;
+  transform: translateX(-84rpx);
+  height: 164rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
+}
+

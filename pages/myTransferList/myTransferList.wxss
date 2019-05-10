@@ -35,10 +35,6 @@
   padding: 30rpx 0;
   align-items: center;
 }
-.share button {
-  font-size: 25rpx;
-  
-}
 .set {
   margin-right: 35rpx;
 }
@@ -57,6 +53,8 @@
 
 .copy {
   font-size: 18rpx;
+  position: relative;
+  top: -4rpx;
 }
 
 
@@ -67,6 +65,10 @@
   overflow: hidden;
   margin-right: 30rpx;
   float: left;
+  line-height: 180rpx;
+}
+.goodsDetails .goodsImg image {
+  vertical-align: middle;
 }
 .goodsDetails .goodsDetails-right {
   float: left;
@@ -85,10 +87,10 @@
 }
 .goodsDetails .goodsDetails-right .right-bottom .item-info {
   margin-right: 20rpx;
-  width: 200rpx;
+  font-size: 20rpx;
 }
 .goodsDetails .info {
-  display: flex;
+  margin-bottom: 10rpx;
 }
 .goodsDetails .info view:first-child{
   flex: 0 0 80rpx;
@@ -147,4 +149,107 @@
 }
 .myTransferList .select {
   color: #ef6f3e;
+}
+
+.shareModel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.3);
+  
+}
+.shareModel-main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-top-right-radius: 40rpx;
+  border-top-left-radius: 40rpx;
+}
+.shareModel-main image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-bottom: 18rpx;
+}
+.shareModel-main .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 100rpx 150rpx 80rpx;
+}
+.shareModel-main .right, .shareModel-main .left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shareModel-main .left button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.shareModel-main .bottom {
+  height: 100rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid #f5f4f9;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+/* 没有商品 */
+.no-list {
+  width: 100%;
+  position: fixed;
+  top: 40%;
+  text-align: center;
+
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 167rpx;
+  transform: translateX(-84rpx);
+  height: 164rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
+}
+
+.share_img_box {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.share_img_box .img_box {
+  height: 90%;
+  margin-bottom: 20rpx;
+}
+.share_img_box image {
+  display: block;
+  height: 1000px;
+}
+.share_img_box .btn-box {
+  display: flex;
+  justify-content: center;
+}
+.share_img_box .btn-box view {
+  background: #fff;
+  flex: 0 0 160rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 40rpx;
+  border-radius: 15rpx;
+}
+.share_img_box .btn-box view.down {
+  background: lightseagreen;
 }

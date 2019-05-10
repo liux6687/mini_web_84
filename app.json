@@ -1,65 +1,39 @@
 {
-  "pages":[
-    
+  "pages": [
+    "pages/loading/loading",
     "pages/home/home",
-    
-    "pages/myService/myService",
-    "pages/login/login",
-    
-    
-    "pages/myTransferList/myTransferList",
-    "pages/startTransfer/startTransfer",
-    
-    "pages/setTransfer/setTransfer",
-    
-    "pages/myGuarantee/myGuarantee",
-    
-    "pages/confirmSendGoods/confirmSendGoods",
-    
-    "pages/me/me",            
-    
-    "pages/mine/mine",
-    
-    "pages/setAl/setAl",
-    
-    "pages/search/search",
-    
-    "pages/orderInfo/orderInfo",
-    
-    
-    "pages/goodsInfo/goodsInfo",
-    
-    
-    "pages/transfer/transfer",
-    
-    
-    "pages/transferList/transferList",
-    
-    
-    "pages/confirmTransfer/confirmTransfer",
-    
-    "pages/withdrawals/withdrawals",
-
-    "pages/myWallet/myWallet",
-    
     "pages/myHome/myHome",
-    
+    "pages/shareAfter/shareAfter",
+    "pages/me/me",
+    "pages/myWallet/myWallet",
     "pages/mySecurityDeposit/mySecurityDeposit",
-    
-    
+    "pages/myGuarantee/myGuarantee",
+    "pages/myTransferList/myTransferList",
+    "pages/login/login",
+    "pages/myService/myService",
+    "pages/confirmSendGoods/confirmSendGoods",
+    "pages/startTransfer/startTransfer",
+    "pages/setTransfer/setTransfer",
+    "pages/mine/mine",
+    "pages/setAl/setAl",
+    "pages/search/search",
+    "pages/orderInfo/orderInfo",
+    "pages/goodsInfo/goodsInfo",
+    "pages/transfer/transfer",
+    "pages/transferList/transferList",
+    "pages/confirmTransfer/confirmTransfer",
+    "pages/withdrawals/withdrawals",
     "pages/rules/rules",
     "pages/freezeInfo/freezeInfo"
-    
-    
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3a3a3a",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "84交易"
   },
   "tabBar": {
-    "selectedColor": "#000000",
+    "selectedColor": "#2c2c2c",
     "list": [
       {
         "pagePath": "pages/home/home",
@@ -80,5 +54,6 @@
         "selectedIconPath": "./images/tabBar/icon3-selected.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

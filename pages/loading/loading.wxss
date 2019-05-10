@@ -1,0 +1,22 @@
+/* pages/loading/loading.wxss *//* pages/loading/loaging.wxss */
+.load {
+  position: relative;
+}
+.img-box {
+  width: 200rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-box image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.h1 {
+  padding-top: 20rpx;
+}

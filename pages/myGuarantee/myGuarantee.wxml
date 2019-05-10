@@ -19,42 +19,56 @@
     </view>
     <!-- 担保我的 -->
     <view class='first-list clearfix' wx:if="{{selected == 1}}">
-      <view class='list-item' wx:for="{{vouchee}}" wx:key="{{index}}">
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+      <view class='list-item' wx:for="{{vouchee}}" bindtap='lookInfo' data-index='{{index}}' wx:key="{{index}}">
+        <image class='userCard-bg' src='/images/myhome_user_bg.png'></image>
         <view class='userCard'>
           <view class='img-box'>
-            <image src='../../images/123.png'></image>
+            <image wx:if="{{item.store_avatar != null}}" src='{{tb_logo + item.store_avatar}}'></image>
+            <image wx:else src='../../images/123.png'></image>
           </view>
           <view class='userCard-right'>
             <view class='h1'>{{item.store_name}}</view>
             <view class='userCard-ID'>
               <image src='../../images/ID.png'></image>
-              <text>{{item.id}}</text>
+              <text>{{item.unique_id}}</text>
             </view>
           </view>
         </view>
+      </view>
+      <view class='no-list' wx:if="{{vouchee.length == 0}}">
+        <view class='img-box'>
+          <image src='../../images/no/no-danbao.png'></image>
+        </view>
+        <view class='text'>还没有人担保您</view>
       </view>
     </view>
     <!-- 我担保的 -->
     <view class='two-list clearfix' wx:if="{{selected == 2}}">
       <view class='list-item' wx:for="{{guarantee}}" wx:key="{{index}}">
-        <image class='userCard-bg' src='../../images/me/myHome/user-bg.png'></image>
+        <image class='userCard-bg' src='/images/myhome_user_bg.png'></image>
         <view class='userCard-btn' data-index='{{index}}' bindtap='remove'>
           <image class='bg' src='../../images/me/remove-db.png'></image>
           <text>取消担保</text>
         </view>
         <view class='userCard'>
           <view class='img-box'>
-            <image src='../../images/123.png'></image>
+            <image wx:if="{{item.store_avatar != null}}" src='{{tb_logo + item.store_avatar}}'></image>
+            <image wx:else src='../../images/123.png'></image>
           </view>
           <view class='userCard-right'>
             <view class='h1'>{{item.store_name}}</view>
             <view class='userCard-ID'>
               <image src='../../images/ID.png'></image>
-              <text>{{item.id}}</text>
+              <text>{{item.unique_id}}</text>
             </view>
           </view>
         </view>
+      </view>
+      <view class='no-list' wx:if="{{guarantee.length == 0}}">
+        <view class='img-box'>
+          <image src='../../images/no/no-danbao.png'></image>
+        </view>
+        <view class='text'>您还没有担保任何人</view>
       </view>
     </view>
   </view>
@@ -70,7 +84,7 @@
         <view class='main'>
           <view class='me'>
             <view class='h1 weight'>我</view>
-            <view class='me-Id'>(ID: {{userInfo.id}})</view>
+            <view class='me-Id'>(ID: {{userInfo.store.unique_id}})</view>
           </view>
           <view class='user'>
             <view class='h1 weight'>愿意担保ID:</view>

@@ -8,7 +8,6 @@ Page({
   data: {
     goods: {}, //从主页传来的商品信息
     goodsArr: [],//商品数组
-    current_store_money: 0,//保证金
     select1: 0,
     select2: 0
   },
@@ -16,8 +15,9 @@ Page({
   gotoConfirmTransfer(e) {
     var idx = e.currentTarget.dataset.index;
     var goodsInfo = this.data.goodsArr[idx];
+    let current_store_money = wx.getStorageSync("store_base").deposit.money;
     wx.navigateTo({
-      url: '/pages/confirmTransfer/confirmTransfer?goods=' + JSON.stringify(this.data.goods) + "&goodsInfo=" + JSON.stringify(goodsInfo) + "&current_store_money=" + this.data.current_store_money,
+      url: '/pages/confirmTransfer/confirmTransfer?goodsInfo=' + JSON.stringify(goodsInfo) + "&current_store_money=" + current_store_money,
     })
   },
   default(e) {
@@ -110,32 +110,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var goods = JSON.parse(options.goods);
+    let goods = JSON.parse(options.goods);
+    console.log("goods",goods)
     this.setData({
       goods
     })
-    var that = this;
-    app.isToken(function goNext(token){
-      wx.request({
-        url: app.globalData.apiURL + '/api/dms/demand/list',
-        data: {
-          token,
-          product_item_id: goods.product_item_id
-        },
-        success: function (res) {
-          console.log(res)
-          if (res.data.status == 200) {
-            that.setData({
-              goodsArr: res.data.data,
-              current_store_money: res.data.current_store_money,
-            })
-          }
-        },
-        fail: function (e) {
-
-        }
-      })
-    })
+   
   },
 
   /**
@@ -149,7 +129,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    app.isToken(function goNext(token) {
+      wx.request({
+        url: app.globalData.apiURL + '/api/dms/demand/list',
+        data: {
+          token,
+          cloud_color_id: that.data.goods.cloud_color_id
+        },
+        success: function (res) {
+          console.log("商品详情", res)
+          if (res.data.status == 200) {
+            that.setData({
+              goodsArr: res.data.data,
+            })
+          }
+        },
+        fail: function (e) {
 
+        }
+      })
+    })
   },
 
   /**
@@ -183,7 +183,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    let shareObj = app.shareFunction(options);
+    return shareObj;
   }
 })

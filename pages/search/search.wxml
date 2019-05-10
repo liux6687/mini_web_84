@@ -2,7 +2,7 @@
   <view class='header'>
     <image src='../../images/home/search.png'></image>
     <view class='search'>
-      <input placeholder='输入单号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
+      <input placeholder='输入货号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
       <image wx:if="{{value != ''}}" src='../../images/close.png' bindtap='close'></image>
     </view>
     <view class='submit' bindtap='submit'>搜索</view>

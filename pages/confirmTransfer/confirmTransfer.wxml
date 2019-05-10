@@ -3,14 +3,14 @@
 <view class='pages'>
   <view class='header'>
     <view class='img-box'>
-      <image src='../../images/123.png'></image>
+      <image mode='widthFix' src='{{goodsInfo.cover_image}}'></image>
     </view>
     <view class='right'>
       <view class='h1'>
-        <text>{{goods.name}}</text>
+        <text>{{goodsInfo.trade_name}}</text>
       </view>
       <view class='Id'>
-        <text>货号：{{goods.item_no}}</text>
+        <text>货号：{{goodsInfo.item_no}}</text>
         <text>尺寸：{{goodsInfo.size}}</text>
       </view>
     </view>
@@ -45,7 +45,7 @@
             元
           </view>
           <view class='zf'>
-            需支付保证金 <text>{{goodsInfo.deliver_amount * goodsInfo.penalty_scale}}</text> 元
+            需支付保证金 <text>{{tools.toFix(goodsInfo.deliver_amount * goodsInfo.penalty_scale)}}</text> 元
           </view>
         </view>
       </view>
@@ -56,13 +56,13 @@
         </view>
         <view class='main-right'>
           <view class='main-title'>银行转账费0.5%（元）</view>
-          <view class='main-num'>-{{tools.toNum(goodsInfo.deliver_amount) * tools.toNum(goodsInfo.service_fee_scale)}}</view>
+          <view class='main-num'>-{{bank_fee}}</view>
         </view>
       </view>
       <view class='bottom'>
         <view class='h1'>实际收入</view>
         <view class='result'>
-          <view>{{goodsInfo.deliver_amount - goodsInfo.deliver_amount * goodsInfo.service_fee_scale}} <text>元</text></view>
+          <view>{{tools.toFix(goodsInfo.deliver_amount - bank_fee)}} <text>元</text></view>
         </view>
       </view>
     </view>

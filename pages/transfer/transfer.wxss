@@ -5,7 +5,9 @@
   background: #fff;
   padding: 16rpx 34rpx; 
 }
+
 .header .search {
+  position: relative;
   height: 70rpx;
   background: #f2f2f2;
   border-radius: 70rpx;
@@ -13,6 +15,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.search-icon {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+}
+.header .search input {
+  width: 75%;
 }
 .header .search .closeBox {
   width: 40rpx;
@@ -47,7 +57,7 @@
   margin-bottom: 20rpx;
 }
 .goods .main .goods-img {
-  width: 180rpx;
+  flex: 0 0 180rpx;
   height: 180rpx;
   border-radius: 10rpx;
   overflow: hidden;
@@ -55,35 +65,67 @@
 }
 .goods .main .title {
   font-weight: bold;
-  line-height: 38rpx;
   margin-bottom: 35rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	font-stretch: normal;
+	line-height: 32rpx;
+	letter-spacing: 0px;
+	color: #000000;
 }
 .goods .main .goods-info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .goods .main .goods-info .info {
   color: #84878d;
 }
 .goods .main .goods-info .info .color{
   margin-right: 20rpx;
+  margin-bottom: 10rpx;
 }
 .goods .bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100rpx;
+  height: 80rpx;
 }
 .goods .bottom .time {
   font-weight: bold;
+}
+.goods .bottom .time .time-info {
+  color: #ef6f3e;
 }
 .goods .bottom .btn-box {
   display: flex;
 }
 .goods .bottom .btn-box view {
   padding: 15rpx 25rpx;
-  border: 2rpx solid #2c2c2c;
+  border: 2rpx solid #6f6f7d;
+  color: #6f6f7d;
   border-radius: 60rpx;
-  margin-left: 24rpx;
+  margin-left: 10rpx;
   font-weight: bold;
+}
+
+/* 没有商品 */
+.no-list {
+  width: 100%;
+  position: fixed;
+  top: 45%;
+  text-align: center;
+
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 167rpx;
+  transform: translateX(-84rpx);
+  height: 164rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
 }

@@ -3,21 +3,21 @@
   <view class='header'>
     <view class='items'>
       <text>当前出售价格</text>
-      <text class='weight'>￥2500</text>
+      <text class='weight'>￥{{goods_amount}}</text>
     </view>
     <view class='items' bindtap='modelShow'>
       <text>设置调货价格</text>
-      <text class='weight'>点击输入</text>
+      <text class='weight'>￥{{deliver_amount}}</text>
     </view>
   </view>
   <view class='footer'>
     <view class='items'>
-      <text>服务费（0.5%）</text>
-      <text class='weight'>-￥12.5</text>
+      <text>服务费</text>
+      <text class='weight'>￥{{service_fee}}</text>
     </view>
     <view class='items'>
       <text class='weight'>您的利润</text>
-      <text class='weight Profit'>￥87.5</text>
+      <text class='weight Profit'>￥{{profit}}</text>
     </view>
     <view class='line'>
       <image src='../../images/me/myTransferList/line.png'></image>
@@ -35,7 +35,7 @@
       <view class='model-content'>
         <view class='input-box'>
           <text class='text'>￥</text>
-          <input type='number' bindinput='getValue' placeholder='请输入...'></input>
+          <input type='digit' maxlength="12" bindinput='getValue' placeholder='请输入...'></input>
         </view>
       </view>
       <view class='model-fooder'>

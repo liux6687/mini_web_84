@@ -11,7 +11,7 @@
         </view>
       </view>
     </view>
-    <view class='dd'  data-index='2' bindtap="showModel">
+    <view class='dd' data-index='2' bindtap="showModel">
        <view class='main line'>
         <view class='h1'>为您调货</view>
         <view class='right'>
@@ -21,6 +21,16 @@
       </view>
     </view>
     <view class='dt'>默认利润设置</view>
+  <!-- 选择计算方式 -->
+    <picker class='dd' bindchange="bindPickerChange" value="{{index}}" range="{{profit_Pattern}}">
+      <view class='main'>
+        <view class='h1'>已选择计算方式：</view>
+        <view class='right'>
+          <text class='text'>{{profit_Pattern[profit_Pattern_index]}}</text>
+          <image src='../../images/me/move-r.png'></image>
+        </view>
+      </view>
+    </picker>
     <view class='dd'  data-index='3' bindtap="showModel">
       <view class='main'>
         <view class='h1'>按固定利润</view>
@@ -98,7 +108,7 @@
       <view class='model-content'>
         <view class='input-box'>
           <text class='text'>￥</text>
-          <input type='number' data-index='3' bindinput='setValue' placeholder='请输入...' value='{{moneyValue}}'></input>
+          <input type='digit' data-index='3' bindinput='setValue'  maxlength='12' placeholder='请输入...' value='{{moneyValue}}'></input>
         </view>
       </view>
       <view class='model-fooder'>
@@ -115,7 +125,7 @@
       </view>
       <view class='model-content'>
         <view class='input-box'>
-          <input type='number' data-index='4' bindinput='setValue' value='{{percentValue}}' style="direction: rtl;flex: 1;"></input>
+          <input type='digit' data-index='4' bindinput='setValue' maxlength='12' value='{{percentValue}}' style="direction: rtl;flex: 1;"></input>
           <text class='text'>%</text>
         </view>
       </view>

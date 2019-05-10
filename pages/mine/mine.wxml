@@ -1,19 +1,14 @@
 <!-- page/mine/mine.wxml -->
-
-<button open-type='getUserInfo' disabled="{{disabled}}" class='weChat' bindgetuserinfo='weChat'>使用微信账号登录</button>
-
-
-
-
-<view class='box' wx:if="{{modal}}">
-    <view class='content'>
-        <view class='title'>授权手机号码</view>
-        <view class='text'>
-            为了提供更优质的服务，我们需要您的授权获取您在微信中绑定的手机号码
-        </view>
-        <button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" class='getPhoneNumber'>同意授权</button>
-        <view class='other' bindtap='other'>
-            不同意，用其他手机号注册/登录
-        </view>
+<view>
+  <view class='header'>
+    <view class='img-box'>
+      <image src='../../images/mine.png'></image>
     </view>
+  </view>
+  <view class='footer'>
+    <view class='login-box'>
+      <image src='../../images/wx.png'></image>
+      <button open-type='getUserInfo' disabled="{{disabled}}" class='weChat' bindgetuserinfo='weChat'>使用微信账号登录</button>
+    </view>
+  </view>
 </view>

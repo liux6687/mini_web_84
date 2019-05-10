@@ -19,13 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   // 手机立即验证 
   verifyPhone(e) {
   // 获取用户信息
-    var user_info = e.detail.userInfo;
-    var that = this;
+    let that = this;
+    let user_info = e.detail.userInfo;
     // 获取用户code码
     wx.login({
       success: function(res) {
@@ -71,7 +70,7 @@ Page({
         mask: true
       })
       wx.request({
-        url: app.globalData.apiURL + '/api/wechat/ma/auth/login',
+        url: app.globalData.apiURL + '/api/wechat/ma/auth/bind-mobile',
         method: 'POST',
         data: {
           miniapp_name: "dms",
@@ -81,39 +80,40 @@ Page({
         },
         success: function (res) {
           if(res.data.status == 201) {
+            wx.hideToast();
             // 时间戳
-            var timestamp = res.data.data.mobile_info.watermark.timestamp;
-            // 手机号
-            var phone = res.data.data.mobile_info.phoneNumber;
-            var token = res.data.data.token;
-            var userInfo = res.data.data.user_info;
-            if (phone != '') {
+            let timestamp = Date.parse(new Date()) / 1000;
+            let token = res.data.data.token;
+            let userInfo = res.data.data.user_info;
+            wx.setStorageSync("timestamp", timestamp)
+            wx.setStorageSync("token", token)
+            that.setData({
+              phoneModal: false
+            })
+            if (userInfo.mobile != '') {
               // 有手机号  验证通过
-              console.log(token)
-              wx.setStorageSync("timestamp", timestamp)
-              wx.setStorageSync("phone", phone)
-              wx.setStorageSync("token", token)
-              that.setData({
-                phoneModal: false
+              wx.showModal({
+                title: '重要提示',
+                showCancel: false,
+                content: '您的初始密码为：111111。如需修改密码请前往84交易后台',
+                success(res) {
+                  if (res.confirm) {
+                    wx.switchTab({
+                      url: '/pages/home/home'
+                    })
+                  }
+                }
               })
-              wx.hideToast();
-              // 如果不是店主
-              if (userInfo.store_id == 0) {
-                that.setData({
-                  selectModel:true
-                })
-              }else {
-                // 如果是店主 直接去首页
-                wx.switchTab({
-                  url: '/pages/home/home'
-                })
-              }
             }
           }else {
             wx.showModal({
               title: '提示',
               content: '验证失败，请重新验证',
             })
+            that.setData({
+              phoneModal: false
+            })
+            wx.hideToast();
           }
         },
         fail: function (e) {
@@ -142,9 +142,10 @@ Page({
           url: app.globalData.apiURL + '/api/user/store?relation=0&token=' + token,
           header: {},
           success: function (res) {
-            if (res.status == 201) {
-              wx.navigateTo({
-                url: '/pages/home/home',
+            console.log("创建店铺",res)
+            if (res.data.status == 201) {
+              wx.switchTab({
+                url: '/pages/home/home'
               })
             }
           }
@@ -212,7 +213,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    let shareObj = app.shareFunction(options);
+    return shareObj;
   }
 })

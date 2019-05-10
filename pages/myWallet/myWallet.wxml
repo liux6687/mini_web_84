@@ -6,14 +6,15 @@
     </view>
     <view class='header-content'>
       <view class='title'>钱包余额(元)</view>
-      <view class='num'>5000</view>
+      <view class='num'>{{extra.money}}</view>
       <view class='ellipse'>
         <image src='../../images/me/mySecurityDeposit/ellipse.png'></image>
       </view>
       <!-- 支付宝 -->
       <view class='alipay'>
         <view>支付宝</view>
-        <view class='user'>1563025655</view>
+        <view class='user' wx:if="{{extra.alipay_account}}">{{extra.alipay_account}}</view>
+        <view class='user' wx:else>尚未添加</view>
         <view class='icon-box' bindtap='gotoSet'>
           <image src='../../images/me/edit.png'></image>
         </view>
@@ -25,37 +26,27 @@
     </view>
   </view>
   <view class='list'>
-    <view class='items'>
-      <view class='items-content NOline'>
-        <view class='left'>
-          <view class='h1'>
-            <text>疯狂过后客户</text>
-          </view>
-          <text class='time'>2019-02-19 12：36:20</text>
-        </view>
-        <view class='right'>
-          <view class='h1'>
-            <text>调货成功</text>
-          </view>
-          <text class='money'>-1800</text>
-        </view>
-      </view>
-    </view>
-    <view class='items'>
+    <view class='items' wx:for="{{data}}" wx:key="{{index}}">
       <view class='items-content'>
         <view class='left'>
           <view class='h1'>
-            <text>疯狂过后客户</text>
+            <text>{{item.remark}}</text>
           </view>
-          <text class='time'>2019-02-19 12：36:20</text>
+          <text class='time'>{{item.created_at}}</text>
         </view>
         <view class='right'>
           <view class='h1'>
-            <text>调货成功</text>
+            <!-- <text>调货成功</text> -->
           </view>
-          <text class='money'>-1800</text>
+          <text class='money'>{{item.change_money}}</text>
         </view>
       </view>
+    </view>
+    <view class='no-list' wx:if="{{data.length == 0}}">
+      <view class='img-box'>
+        <image src='../../images/no/no-money.png'></image>
+      </view>
+      <view class='text'>暂无记录</view>
     </view>
   </view>
 </view>

@@ -50,24 +50,26 @@
   width: 700rpx;
   top: 173rpx;
   left: 50%;
-  margin-left: -350rpx;
+  transform: translateX(-350rpx);
   border-radius: 10rpx;
   overflow: hidden;
+  z-index: 999;
 }
 .bg {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 999;
   width: 174rpx;
   height: 79rpx;
 }
-/* share */
 .share {
   position: absolute;
   top: 28rpx;
   right: 0;
   width: 128rpx;
   height: 50rpx;
+  z-index: 999;
 }
 .share .share-bg {
   position: absolute;
@@ -75,23 +77,32 @@
   left: 0;
   width: 128rpx;
   height: 50rpx;
+  z-index: 10;
 }
 .share-mian {
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   height: 50rpx;
   display: flex;
   align-items: center;
 }
+.share button {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .share-mian text {
   color: #fff;
+
 }
 .share-mian image {
   width: 26rpx;
   height: 26rpx;
   margin: 0 10rpx 0 24rpx;
 }
-/* card-content */ 
 .card-content {
   display: flex;
   flex-direction: column;
@@ -166,6 +177,8 @@
 .mian .nav .nav-item {
   font-weight: bold;
   margin-right: 50rpx;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 .mian .nav .nav-item.active {
   font-size: 30rpx;

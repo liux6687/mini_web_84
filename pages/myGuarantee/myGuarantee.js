@@ -7,11 +7,12 @@ Page({
    */
   data: {
     userInfo: {},
-    guarantee: [],//担保我的
-    vouchee: [],// 我担保的
+    guarantee: [],
+    vouchee: [],
     id: '',//愿意担保的id
     modelShow: false,
-    selected: 1
+    selected: 1,
+    tb_logo: ""
   },
   // 点击担保他人
   showModel() {
@@ -21,7 +22,6 @@ Page({
   },
   // 导航条切换
   select(e) {
-    console.log(1)
     var idx = e.currentTarget.dataset.index;
     this.setData({
       selected: idx
@@ -49,7 +49,7 @@ Page({
         url: app.globalData.apiURL + '/api/dms/guarantee',
         method: "POST",
         data: {
-          store_id: that.data.id,
+          unique_id: that.data.id,
           token: token
         },
         success: function (res) {
@@ -96,13 +96,14 @@ Page({
   remove(e) {
     var that = this;
     var idx = e.currentTarget.dataset.index;
-    var store_id = that.data.guarantee[idx].id;
+    var unique_id = that.data.guarantee[idx].unique_id;
+    console.log(unique_id)
     app.isToken(function goNext(token){
       wx.request({
         url: app.globalData.apiURL + '/api/dms/guarantee/cancel',
         data: {
           token,
-          store_id
+          unique_id
         },
         method: "POST",
         success: function (res) {
@@ -127,6 +128,7 @@ Page({
           token: token
         },
         success: function (res) {
+          console.log(res)
           if (res.data.status == 200) {
             that.setData({
               guarantee: res.data.data.guarantee,
@@ -137,10 +139,23 @@ Page({
       })
     })
   },
+  lookInfo(e) {
+    console.log(11111)
+    let that = this;
+    let idx = e.currentTarget.dataset.index;
+    let userId = that.data.vouchee[idx].unique_id;
+    wx.navigateTo({
+      url: '/pages/shareAfter/shareAfter?userId=' + userId,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let tb_logo = app.globalData.tb_logo;
+    this.setData({
+      tb_logo
+    })
     var userInfo = wx.getStorageSync("userInfo");
     this.setData({
       userInfo
@@ -193,7 +208,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    let shareObj = app.shareFunction(options);
+    return shareObj;
   }
 })

@@ -7,25 +7,25 @@
       </view>
       <view class='h1'>支付宝账号</view>
     </view>
-    <view class='userName'>156203142866</view>
+    <view class='userName'>{{alipay_account}}</view>
   </view>
   <view class='content'>
     <view class='h1'>提现2小时内到账, 每天仅允许提现1次</view>
     <view class='input-box'>
       <view class='left'>
         <text>￥</text>
-        <input type='number' value='500'></input>
+        <input type='digit' value='{{money}}' bindblur='getValue'></input>
       </view>
-      <view class='btn-box'>
+      <view class='btn-box' bindtap='close'>
         <image class='close' src='../../images/me/close.png'></image>
       </view>
     </view>
     <view class='content-footer'>
-      <view class='all-money'>可提现金额 5000元</view>
-      <view class='all'>全部提现</view>
+      <view class='all-money'>可提现金额{{wallet_money}}元</view>
+      <view class='all' bindtap='all_money'>全部提现</view>
     </view>
   </view>
   <view class='submit-box'>
-    <view>确认</view>
+    <view bindtap='submit'>确认</view>
   </view>
 </view>

@@ -1,9 +1,11 @@
 .me {
 }
 .me .top {
-  padding: 30rpx 50rpx 45rpx 40rpx;
+  padding: 30rpx 50rpx 0rpx 40rpx;
   background: #3a3a3a;
   color: #fff;
+  /* height: 390rpx; */
+  box-sizing: border-box;
 }
 /* 用户信息 */
 .me .top .user {
@@ -12,23 +14,32 @@
 }
 .me .top .user .userInfo {
   display: flex;
-  margin-right: 220rpx;
+  flex: 1;
+  align-items: center;
 }
 .me .top .portrait {
-  width: 100rpx;
-  height: 100rpx;
+  flex: 0 0 140rpx;
+  height: 140rpx;
   border-radius: 100rpx;
   overflow: hidden;
   margin-right: 25rpx;
+  border: 10rpx solid #4d4d4d;
 }
+.me .top .user .userInfo .userInfo-right {
+  flex: 1;
+} 
 .me .top .user .userInfo .userInfo-right .h1 {
   padding: 10rpx 0 30rpx;
   font-size: 28rpx;
 }
 .me .top .user .userInfo .userInfo-right .Id-text {
-  font-size: 18rpx;
+  display: inline-block;
+  border-radius: 30rpx;
+  font-size: 22rpx;
   padding: 10rpx 10rpx 10rpx 40rpx;
-  background: rgba(0,0,0,.2)
+  background: rgba(0,0,0,.2);
+	font-family: PingFangSC-Regular;
+	color: #ffffff;
 }
 .me .top .user .userInfo .userInfo-right .Id {
   position: relative;
@@ -46,13 +57,13 @@
   flex: 0 0 148rpx;
   position: relative;
 }
-.me .again-login view {
+.me .again-login button {
   border: 2rpx solid #9d9d9d;
-  height: 46rpx;
   box-sizing: border-box;
   padding: 10rpx 16rpx 10rpx 45rpx;
   border-radius: 46rpx;
   font-size: 20rpx;
+  color: #fff;
 }
 .me .again-login image {
   position: absolute;
@@ -62,8 +73,26 @@
   height: 22rpx;
 }
 /* 店铺信息 */
+.content {
+  position: relative;
+  padding-top: 86rpx;
+}
 .me .shop {
-  padding-top: 30rpx;
+  width: 714rpx;
+	height: 140rpx;
+  position: absolute;
+  top: -70rpx;
+  left: 50%;
+  margin-left: -357rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 16px 0px 
+		rgba(0, 0, 0, 0.1);
+	border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx 0 35rpx;
 }
 .shopInfo {
   display: flex;
@@ -86,8 +115,13 @@
   height: 26rpx;
 }
 .me .shop .shop-right .h1 {
-  padding: 10rpx 0 30rpx;
+  padding: 20rpx 0 20rpx;
   font-size: 28rpx;
+	font-family: PingFangSC-Regular;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
 }
 .me .shop .shop-right .imgList {
   display: flex;
@@ -97,14 +131,42 @@
   height: 22rpx;
   margin-right: 2rpx;
 }
-
+.shop-home {
+  width: 170rpx;
+	height: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	background-image: linear-gradient(90deg, 
+		#f47047 0%, 
+		#fa903e 60%, 
+		#ffaf34 100%), 
+	linear-gradient(
+		#fafbfd, 
+		#fafbfd);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 29px;
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+}
+.shop-home image {
+  margin-left: 15rpx;
+  width: 11rpx;
+	height: 17rpx;
+}
 /* mys */
 .mys {
-  background: #fff;
+  /* background: #fff; */
   display: flex;
-  padding: 32rpx 0;
+  padding: 32rpx 0 114rpx;
+  /* padding-top: 36rpx; */
   justify-content: center;
-  margin-bottom: 18rpx;
+  height: 80rpx;
 }
 .myService, .myTransferList, .myGuarantee {
   flex: 1;
@@ -118,7 +180,12 @@
 }
 .mys .num {
   margin-bottom: 15rpx;
-  font-weight: bold;
+	font-family: PingFangSC-Regular;
+	font-size: 35rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
 }
 
 /* 我的信用分 */ 
@@ -136,7 +203,7 @@
 }
 .myCredit .right,.kefu .right,.mySecurityDeposit .right,.myWallet .right {
   display: flex;
-  padding: 44rpx 0rpx;
+  padding: 40rpx 0rpx;
   flex: 1;
   justify-content: space-between;
 }
@@ -144,7 +211,7 @@
 .mySecurityDeposit {
   margin-bottom: 2rpx;
 }
-.kefu .move {
+.kefu .move, .myCredit .move,.mySecurityDeposit .move,.myWallet .move {
   width: 10rpx;
   height: 20rpx;
 }

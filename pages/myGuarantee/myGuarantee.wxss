@@ -59,6 +59,8 @@
 .mian .nav .nav-item {
   font-weight: bold;
   margin-right: 50rpx;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 .mian .nav .nav-item.active {
   font-size: 30rpx;
@@ -165,4 +167,25 @@
 .two-list .list-item {
   padding-top: 0rpx;
   margin-bottom: 45rpx;
+}
+/* 没有商品 */
+.no-list {
+  width: 400rpx;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  margin-left: -200rpx;
+  text-align: center;
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 167rpx;
+  transform: translateX(-84rpx);
+  height: 164rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
 }

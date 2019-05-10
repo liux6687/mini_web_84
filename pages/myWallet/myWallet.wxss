@@ -98,3 +98,22 @@
 .time {
   color: #afafaf;
 }
+/* 没有商品 */
+.no-list {
+  width: 100%;
+  position: fixed;
+  top: 45%;
+  text-align: center;
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 184rpx;
+  transform: translateX(-82rpx);
+  height: 154rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
+}

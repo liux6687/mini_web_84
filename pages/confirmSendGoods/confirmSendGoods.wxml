@@ -3,7 +3,7 @@
     <view class='top'>
       <view class='time'>
         <view class='h1'>发货倒计时</view>
-        <view class='time-info'>剩余11小时59分</view>
+        <view class='time-info'>剩余{{time_obj.h}}小时{{time_obj.m}}分{{time_obj.s}}秒</view>
       </view>
       <view class='btn-box' bindtap='cancelSend'>
         <text>取消发货</text>
@@ -16,14 +16,14 @@
       <view class='bottom-right'>
         <view class='user'>
            <view class='userName'>
-            <view>张晓明</view>
+            <view>{{user_addr.name}}</view>
           </view>
           <view class='phone'>
-            15620748266
+            {{user_addr.mobile}}
           </view>
         </view>
         <view class='address'>
-          <text class='weight'>天津市西青区宾水西道精武镇 天津工业大学</text>
+          <text class='weight'>{{user_addr.state}} {{user_addr.city}} {{user_addr.district}} {{user_addr.address}}</text>
         </view>
       </view>
     </view>
@@ -46,7 +46,7 @@
         <view class='img-box'>
           <image src='../../images/goodsInfo/03.png'></image>
         </view>
-        <text>请于确认调货12小时内进行发货</text>
+        <text>请于确认调货24小时内进行发货</text>
       </view>
     </view>
     <!-- 物流 -->
@@ -54,7 +54,12 @@
       <view class='company'>
         <view class='h1'>物流公司：</view>
         <view class='input-box'>
-          <input type='text' placeholder='请输入物流公司'></input>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{companyNameArr}}">
+            <view class="picker">
+              <view class='companyName' wx:if="{{idx == ''}}">请选择物流公司{{}}</view>
+              <view class='companyName' wx:else >{{companyNameArr[idx]}}</view>
+            </view>
+          </picker>
         </view>
         <view class='icon-box'>
           <image src='../../images/drop_down.png'></image>
@@ -63,33 +68,25 @@
       <view class='odd-num'>
         <view class='h1'>物流单号：</view>
         <view class='input-box'>
-          <input type='number' placeholder='请输入物流单号'></input>
+          <input type='number' bindinput='getValue' value='{{logistics_num}}' style='color: #7b7d80;' placeholder='请输入物流单号'></input>
         </view>
         <view class='icon-box'>
-          <image src='../../images/sao.png'></image>
+          <image src='../../images/sao.png' bindtap='scan'></image>
         </view>
       </view>
     </view>
     <!-- 上传 -->
     <view class='upload'>
-      <view class='upload-items'>
-        <image wx:if="{{true}}" src='../../images/123.png'></image>
+      <view class='upload-items' bindtap='uploadImg' wx:for="{{uploadArr}}" data-index='{{index}}' wx:key = "{{index}}">
+        <image class='upload-img' mode='widthFix' wx:if="{{item.add}}" data-src='{{item.imageURL}}' src='{{item.imageURL}}'></image>
         <view wx:else class='no-upload'>
           <image src='../../images/goodsInfo/add.png'></image>
-          <text>物流底单</text>
-        </view>
-      </view>
-      <view class='upload-items'>
-        <image wx:if="{{false}}" src='../../images/123.png'></image>
-        <view wx:else class='no-upload'>
-          <image src='../../images/goodsInfo/add.png'></image>
-          <text>防掉包扣</text>
+          <text>{{item.text}}</text>
         </view>
       </view>
     </view>
   </view>
 </view>
-
 <view class='submit-box'>
   <view bindtap='submit'>确认发货</view>
 </view>

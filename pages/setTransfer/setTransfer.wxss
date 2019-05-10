@@ -33,7 +33,6 @@
   color: #6f6f7d;
   font-size: 20rpx;
 }
-
 .submit-box {
   padding: 20rpx;
   background: #fff;

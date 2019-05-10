@@ -1,1 +1,36 @@
 /* pages/mine/mine.wxss */
+.header {
+  padding: 110rpx 55rpx 0 55rpx;
+}
+.img-box {
+  width: 100%;
+  height: 500rpx;
+  margin-bottom: 325rpx;
+}
+.footer .login-box {
+  width: 430rpx;
+  height: 85rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #37c022;
+  border-radius: 85rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.footer .login-box image {
+  flex: 0 0 46rpx;
+	height: 46rpx;
+  margin-right: 20rpx;
+}
+.footer .login-box button {
+  margin: 0;
+	font-family: PingFangSC-Regular;
+	font-size: 27rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -1px;
+	color: #30be1a;
+}

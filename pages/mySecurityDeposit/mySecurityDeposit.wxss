@@ -146,3 +146,28 @@
   font-size: 30rpx;
   margin: 0 30rpx;
 }
+/* 没有商品 */
+.no-list {
+  width: 100%;
+  position: fixed;
+  top: 45%;
+  text-align: center;
+}
+.no-list .img-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 184rpx;
+  transform: translateX(-82rpx);
+  height: 154rpx;
+}
+.no-list .text {
+  margin-top: 210rpx;
+  color: #ccced8;
+}
+.ali-code {
+  padding-top: 60rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}

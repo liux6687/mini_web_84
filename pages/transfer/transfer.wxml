@@ -1,53 +1,66 @@
 <!-- 调货中页面 -->
 <view class='pages'>
    <view class='header'>
-    <image src='../../images/home/search.png'></image>
     <view class='search'>
-      <input placeholder='输入单号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
-      <view class='closeBox'>
-        <image wx:if='{{value !=""}}' src='../../images/close.png' bindtap='close'></image>
+      <image class='search-icon' src='../../images/home/search.png'></image>
+      <input placeholder='输入货号或者名称搜索' value='{{value}}' step="0.1" bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
+      <view class='closeBox' bindtap='close'>
+        <image wx:if='{{value !=""}}' src='../../images/close.png'></image>
       </view>
     </view>
   </view>
   <view class='content'>
     <view class='goodsList'>
-      <view class='goods'>
+      <view class='goods' wx:for="{{dataList}}" wx:key="{{index}}">
         <view class='top'>
           <view class='goods-Id'>
-            <view>订单编号：123567895265962</view>
-            <view class='copy' bindtap='copy'>复制</view>
+            <view>订单编号：{{item.raw_oid}}</view>
+            <view class='copy' data-str='{{item.raw_oid}}' bindtap='copy'>复制</view>
           </view>
-          <view class='status'>已完成</view>
+          <view wx:if="{{item.status == 0}}" class='status'>未发货</view>
+          <view wx:elif="{{item.status == 1}}" class='status'>已发货</view>
+          <view wx:elif="{{item.status == 2}}" class='status'>确认完成</view>
+          <view wx:elif="{{item.status == 3||item.status == 4||item.status == 5}}" class='status'>已取消</view>
+          <view wx:else class='status'></view>
         </view>
         <view class='main'>
-          <view class='goods-img'>
-            <image src='../../images/123.png'></image>
+          <view class='goods-img' style='background: #fff url({{item.cover_image}}) no-repeat;background-position: center center; background-size: 100% auto;'>
+            <!-- <image src='{{item.cover_image}}'></image> -->
           </view>
           <view class='main-right'>
             <view class='title'>
-              <text>fhgjhfj fhgj jfhgjhg hfgjh 最新黄金 黄金</text>
+              <text>{{item.trade_name}}</text>
             </view>
             <view class='goods-info'>
               <view class='info'>
-                <text class='color'>白色</text>
-                <text class='size'>40</text>
+                <view class='color'>颜色分类：{{item.color}}</view>
+                <view class='size'>鞋码：{{item.size}}</view>
               </view>
               <view class='price'>
-                <text class='weight'>￥799.00</text>
+                <text class='weight'>￥{{item.deliver_amount}}</text>
               </view>
             </view>
           </view>
         </view>
         <view class='bottom'>
           <view class='time'>
-            <text>已发货：12时16分</text>
+            <view wx:if="{{item.status == 0}}">
+              <view>发货倒计时：</view>
+              <view class='time-info'>{{resultTimeArr[index].h}}时{{resultTimeArr[index].m}}分{{resultTimeArr[index].s}}秒</view>
+            </view>
           </view>
           <view class='btn-box'>
-            <view bindtap='gotoOrderInfo'>查看详情</view>
-            <view class='btn'>立即发货</view>
+            <view bindtap='btnClick' data-index='{{index}}' wx:for="{{item.buttons}}" wx:key="{{idx}}" data-id='{{itm.id}}' wx:for-index="idx" wx:for-item="itm">{{itm.name}}</view>
           </view>
         </view>
       </view>
     </view>
+
+  </view>
+  <view class='no-list' wx:if="{{dataList.length == 0}}">
+    <view class='img-box'>
+      <image src='../../images/no/no-list.png'></image>
+    </view>
+    <view class='text'>暂无商品</view>
   </view>
 </view>

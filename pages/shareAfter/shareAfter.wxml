@@ -1,0 +1,54 @@
+ <view class='credit-ample'>
+    <view class='credit-ample-top'>
+      <view class='user'>
+        <view class='imgBox'>
+          <view>
+            <image wx:if="{{extra.store_avatar != null}}" src='{{tb_logo + extra.store_avatar}}'></image>
+            <image wx:else src='../../images/123.png'></image>
+          </view>
+          <image class='Identity' src='../../images/dispatcher.png'></image>
+        </view>
+        <view class='user-info'>
+          <view class='name'>{{extra.store_name}}</view>
+          <view class='id'>
+            <image src='../../images/myhome_id.png'></image>
+            <view class='num'>{{extra.unique_id}}</view>
+          </view>
+        </view>
+        <view class='goHome' bindtap='goHome'>
+          <image class='bg' src='../../images/move-bg.png'></image>
+          <view class='goHome-main'>
+            <image src='../../images/home.png'></image>
+            <text class='text'>返回首页</text>
+          </view>
+        </view>
+      </view>      
+      <!-- 搜索 -->
+      <view class='search'>
+        <input placeholder='输入单号或者名称搜索' value='{{value}}' bindinput='getSearchValue' confirm-type="search" bindconfirm="search"></input>
+        <view class='closeBox'>
+          <image wx:if='{{value !=""}}' src='../../images/close.png' bindtap='close'></image>
+        </view>
+      </view>
+    </view>
+    <view class='goods-list clearfix'>
+      <view class='listItem' bindtap='gotoGoodsInfo' wx:for="{{goodsList}}" data-index='{{index}}' wx:key="{{index}}">
+        <view class='imgBox'>
+          <image src='{{item.cover_image}}'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='info-top'>{{item.trade_name}}</view>
+          <view class='info-bottom'>
+            <view class='info-bottom-left'>
+              <view class='color'>颜色分类：{{item.color}}</view>
+              <view class='size'>鞋码：{{item.size}}</view>
+            </view>
+            <view class='info-bottom-right'>
+              <view>￥</view>
+              <view class='price'>{{item.deliver_amount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
